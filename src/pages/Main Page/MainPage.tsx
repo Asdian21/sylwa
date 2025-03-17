@@ -44,6 +44,7 @@ export const MainPage = () => {
           heading="ЛЕКЦИЯ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="ЧИТАТЬ"
+          path="lecture-page"
         />
       </section>
 
@@ -52,6 +53,7 @@ export const MainPage = () => {
           heading="ПРАКТИКА"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="НАЧАТЬ"
+          path="practice-page"
         />
       </section>
 
@@ -60,6 +62,7 @@ export const MainPage = () => {
           heading="ВИДЕО УРОКИ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="СМОТРЕТЬ"
+          path="/"
         />
       </section>
 
@@ -68,6 +71,7 @@ export const MainPage = () => {
           heading="МЕТОДИЧКА"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="ЧИТАТЬ"
+          path="/"
         />
       </section>
 
@@ -76,6 +80,7 @@ export const MainPage = () => {
           heading="ТЕСТЫ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="ПРОЙТИ"
+          path="/"
         />
       </section>
 
