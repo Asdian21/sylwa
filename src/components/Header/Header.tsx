@@ -23,10 +23,12 @@ export const Header = ({
       <header>
         <div className="header">
           <div className="logo">
-            <img
-              src="./eko_icon.png"
-              style={{ width: "50px", height: "50px" }}
-            />
+            <a href="/">
+              <img
+                src="./eko_icon.png"
+                style={{ width: "50px", height: "50px" }}
+              />
+            </a>
           </div>
           <ul>
             <li>
