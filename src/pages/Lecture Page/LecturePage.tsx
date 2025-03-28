@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { StyleLecturePage } from "./LecturePage.style";
 import { useRef } from "react";
 
@@ -16,6 +17,8 @@ export const LecturePage = () => {
     event?.preventDefault();
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const navigate = useNavigate();
 
   return (
     <StyleLecturePage>
@@ -68,7 +71,9 @@ export const LecturePage = () => {
           <h2>
             Install the plugin and convert your designs to a responsive site.
           </h2>
-          <button>Get started</button>
+          <button onClick={() => navigate("/energetika-lectures")}>
+            Get started
+          </button>
         </div>
       </div>
       <div className="smart-technology" ref={section2Ref}>

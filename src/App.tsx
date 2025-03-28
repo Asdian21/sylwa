@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { MainPage } from "./pages/Main Page/MainPage";
 import { LecturePage } from "./pages/Lecture Page/LecturePage";
+import { Lectures } from "./pages/Lecture Page/Lectures/Lectures";
 
 const routerConfig = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const routerConfig = createBrowserRouter([
   {
     path: "lecture-page",
     element: <LecturePage />,
+  },
+  {
+    path: "energetika-lectures",
+    element: <Lectures />,
   },
 ]);
 
