@@ -1,4 +1,4 @@
-import { CardList } from "../../../components/CardList";
+import { CardList } from "../../../components/CardList/CardList";
 import { SearchBar } from "../../../components/SearchBar";
 import { StyleLectures } from "./Lectures.style";
 import { useState } from "react";
@@ -59,8 +59,8 @@ export function Lectures() {
 
   return (
     <StyleLectures>
-      <div className="p-4">
-        <h1 className="text-2xl mb-4">Поиск по лекциям</h1>
+      <div>
+        <h1>Поиск по лекциям</h1>
         <SearchBar onSearch={setSearchQuery} />
         <CardList cards={filteredCards} />
       </div>

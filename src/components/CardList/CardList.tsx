@@ -1,4 +1,4 @@
-import { LectureCard } from "./Lecrture/LectureCard";
+import { LectureCard } from "../Lecrture/LectureCard";
 
 interface CardListProps {
   cards: {
