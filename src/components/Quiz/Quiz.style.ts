@@ -16,6 +16,16 @@ export const StyleQuiz = styled.div`
     padding: 40px 50px;
   }
 
+  .container h1 {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto 50px;
+  }
+
   .container hr {
     height: 2px;
     border: none;

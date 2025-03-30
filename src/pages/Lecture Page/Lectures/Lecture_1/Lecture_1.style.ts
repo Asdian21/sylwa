@@ -80,14 +80,4 @@ export const StyleLecture_1 = styled.div`
     height: 1000px;
     border: 3px solid yellowgreen;
   }
-
-  h2 {
-    text-transform: uppercase;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Inter", sans-serif;
-    display: flex;
-    justify-content: center;
-    margin: 0px auto 50px;
-  }
 `;

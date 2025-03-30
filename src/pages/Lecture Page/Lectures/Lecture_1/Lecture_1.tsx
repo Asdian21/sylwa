@@ -33,7 +33,6 @@ export const Lecture_1 = () => {
       </Splide>
 
       <div className="text__container"></div>
-      <h2>Проверка себя</h2>
       <Quiz />
     </StyleLecture_1>
   );

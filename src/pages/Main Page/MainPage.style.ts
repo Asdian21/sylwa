@@ -4,7 +4,7 @@ export const StyleMainPage = styled.div`
   .join-wind {
     display: flex;
     height: 100vh;
-    background-image: url(./bg_image.jpg);
+    background-image: url(./knowledge_1.png);
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.8) inset;
@@ -15,9 +15,7 @@ export const StyleMainPage = styled.div`
       font-size: 79px;
       display: flex;
       margin-top: 224px;
-      margin-left: auto;
-      margin-right: 80px;
-      text-align: right;
+      margin-left: 80px;
     }
   }
   .lecture-wind {

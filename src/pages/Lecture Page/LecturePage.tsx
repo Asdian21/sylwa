@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { StyleLecturePage } from "./LecturePage.style";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export const LecturePage = () => {
   const section1Ref = useRef<HTMLDivElement>(
@@ -19,6 +19,11 @@ export const LecturePage = () => {
   };
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Прокрутка в начало
+  }, [pathname]); // Запускается при изменении пути
 
   return (
     <StyleLecturePage>

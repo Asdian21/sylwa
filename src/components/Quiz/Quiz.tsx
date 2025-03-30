@@ -58,7 +58,7 @@ export const Quiz = () => {
   return (
     <StyleQuiz>
       <div className="container">
-        <h1>Quiz App</h1>
+        <h1>Проверка себя</h1>
         <hr />
         {result ? (
           <></>
