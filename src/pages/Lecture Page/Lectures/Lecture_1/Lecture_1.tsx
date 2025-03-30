@@ -1,6 +1,7 @@
 import { StyleLecture_1 } from "./Lecture_1.style";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { Quiz } from "../../../../components/Quiz/Quiz";
 
 export const Lecture_1 = () => {
   return (
@@ -33,6 +34,7 @@ export const Lecture_1 = () => {
 
       <div className="text__container"></div>
       <h2>Проверка себя</h2>
+      <Quiz />
     </StyleLecture_1>
   );
 };
