@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
-import { StyleSearchBar } from "./SearchBar.style";
 import { Search } from "lucide-react";
+import { StyleSearchBar } from "./SearchBar.style";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;

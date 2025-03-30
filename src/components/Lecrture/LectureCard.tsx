@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { StyleLectureCard } from "./LectureCard.style";
 
 interface Props {
@@ -5,6 +6,7 @@ interface Props {
   lessonName: string;
   paragraph: string;
   buttonText: string;
+  link: string;
 }
 
 export const LectureCard = ({
@@ -12,14 +14,16 @@ export const LectureCard = ({
   lessonName,
   paragraph,
   buttonText,
+  link,
 }: Props) => {
+  const navigate = useNavigate();
   return (
     <StyleLectureCard>
       <img src={image} />
       <div className="textContainer">
         <h3>{lessonName}</h3>
         <p>{paragraph}</p>
-        <button>{buttonText}</button>
+        <button onClick={() => navigate(link)}>{buttonText}</button>
       </div>
     </StyleLectureCard>
   );

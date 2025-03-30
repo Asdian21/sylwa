@@ -1,5 +1,5 @@
 import { CardList } from "../../../components/CardList/CardList";
-import { SearchBar } from "../../../components/SearchBar";
+import { SearchBar } from "../../../components/SearchBar/SearchBar";
 import { StyleLectures } from "./Lectures.style";
 import { useState } from "react";
 
@@ -9,6 +9,7 @@ interface LectureCard {
   lessonName: string;
   paragraph: string;
   buttonText: string;
+  link: string;
 }
 
 const initialLectureCards: LectureCard[] = [
@@ -18,6 +19,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName: "React Basics",
     paragraph: "Изучите основы React и создание компонентов.",
     buttonText: "Начать",
+    link: "/lecture_1",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName: "JavaScript Advanced",
     paragraph: "Углубитесь в продвинутые концепции JS.",
     buttonText: "Узнать больше",
+    link: "",
   },
   {
     id: 3,
@@ -32,6 +35,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName: "TypeScript 101",
     paragraph: "Типизация в JavaScript для устойчивого кода.",
     buttonText: "Читать",
+    link: "",
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName: "Vite for Beginners",
     paragraph: "Быстрый и легкий сборщик проектов.",
     buttonText: "Попробовать",
+    link: "",
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName: "Node.js Mastery",
     paragraph: "Создание серверов на JavaScript.",
     buttonText: "Подробнее",
+    link: "",
   },
 ];
 

@@ -7,6 +7,7 @@ interface CardListProps {
     lessonName: string;
     paragraph: string;
     buttonText: string;
+    link: string;
   }[];
 }
 
@@ -20,6 +21,7 @@ export function CardList({ cards }: CardListProps) {
           lessonName={card.lessonName}
           paragraph={card.paragraph}
           buttonText={card.buttonText}
+          link={card.link}
         />
       ))}
     </div>

@@ -3,6 +3,7 @@ import "./App.css";
 import { MainPage } from "./pages/Main Page/MainPage";
 import { LecturePage } from "./pages/Lecture Page/LecturePage";
 import { Lectures } from "./pages/Lecture Page/Lectures/Lectures";
+import { Lecture_1 } from "./pages/Lecture Page/Lectures/Lecture_1/Lecture_1";
 
 const routerConfig = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const routerConfig = createBrowserRouter([
   {
     path: "energetika-lectures",
     element: <Lectures />,
+  },
+  {
+    path: "lecture_1",
+    element: <Lecture_1 />,
   },
 ]);
 
