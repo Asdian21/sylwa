@@ -24,6 +24,7 @@
 
     /* Others */
     "allowJs": true,
+    
   },
   "include": ["src"]
 }
