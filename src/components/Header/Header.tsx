@@ -1,4 +1,3 @@
-import { Search } from "../Search button/Search";
 import { StyleHeader } from "./Header.style";
 
 interface Props {
@@ -80,7 +79,7 @@ export const Header = ({
               </a>
             </li>
           </ul>
-          <Search />
+          <div></div>
         </div>
       </header>
     </StyleHeader>
