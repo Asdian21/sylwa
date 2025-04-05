@@ -5,7 +5,6 @@ interface CardListProps {
     id: number;
     image: string;
     lessonName: string;
-    paragraph: string;
     buttonText: string;
     link: string;
   }[];
@@ -19,7 +18,6 @@ export function CardList({ cards }: CardListProps) {
           key={card.id}
           image={card.image}
           lessonName={card.lessonName}
-          paragraph={card.paragraph}
           buttonText={card.buttonText}
           link={card.link}
         />

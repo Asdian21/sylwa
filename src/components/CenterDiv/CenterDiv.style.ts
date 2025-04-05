@@ -9,11 +9,13 @@ export const StyleCenterDiv = styled.div`
   }
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 60px;
   margin: 190px auto;
   width: 390px;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
   h1 {
     max-width: 360px;
     font-size: 48px;
@@ -24,7 +26,7 @@ export const StyleCenterDiv = styled.div`
     width: 390px;
     font-weight: medium;
     font-size: 24px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.86);
   }
   button {
     width: 120px;

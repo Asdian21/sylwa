@@ -76,7 +76,7 @@ export const Header = ({
                 className="menu"
                 onClick={() => scrollToSection(section5Ref)}
               >
-                МЕТОДИЧКА
+                МЕТОДИЧЕСКОЕ ПОСОБИЕ
               </a>
             </li>
           </ul>

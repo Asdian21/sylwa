@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyleLectureCard = styled.div`
   display: flex;
   flex-direction: column;
-  height: 375px;
   width: 274px;
   border-radius: 20px;
   overflow: hidden;
@@ -17,7 +16,11 @@ export const StyleLectureCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 30px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
     h3 {
       font: bold 20px "Inter";
     }

@@ -7,7 +7,7 @@ interface LectureCard {
   id: number;
   image: string;
   lessonName: string;
-  paragraph: string;
+
   buttonText: string;
   link: string;
 }
@@ -17,7 +17,7 @@ const initialLectureCards: LectureCard[] = [
     id: 1,
     image: "./lectureCard.jpg",
     lessonName: "React Basics",
-    paragraph: "Изучите основы React и создание компонентов.",
+
     buttonText: "Начать",
     link: "/lecture_1",
   },
@@ -25,15 +25,16 @@ const initialLectureCards: LectureCard[] = [
     id: 2,
     image: "./lectureCard.jpg",
     lessonName: "JavaScript Advanced",
-    paragraph: "Углубитесь в продвинутые концепции JS.",
+
     buttonText: "Узнать больше",
     link: "",
   },
   {
     id: 3,
     image: "./lectureCard.jpg",
-    lessonName: "TypeScript 101",
-    paragraph: "Типизация в JavaScript для устойчивого кода.",
+    lessonName:
+      "Интеллектуальные сети и сетевые технологии для зеленых технологий. Применение технологий Интернета вещей (IoT) и искусственного интеллекта для оптимизации энергопотребления.",
+
     buttonText: "Читать",
     link: "",
   },
@@ -41,7 +42,7 @@ const initialLectureCards: LectureCard[] = [
     id: 4,
     image: "./lectureCard.jpg",
     lessonName: "Vite for Beginners",
-    paragraph: "Быстрый и легкий сборщик проектов.",
+
     buttonText: "Попробовать",
     link: "",
   },
@@ -49,7 +50,7 @@ const initialLectureCards: LectureCard[] = [
     id: 5,
     image: "./lectureCard.jpg",
     lessonName: "Node.js Mastery",
-    paragraph: "Создание серверов на JavaScript.",
+
     buttonText: "Подробнее",
     link: "",
   },

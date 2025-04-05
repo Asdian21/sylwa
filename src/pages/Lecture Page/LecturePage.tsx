@@ -43,7 +43,7 @@ export const LecturePage = () => {
               className="menu"
               onClick={() => scrollToSection(section1Ref)}
             >
-              ЭНЕРГЕТИКА
+              ЭЛЕКТРОСНАБЖЕНИЕ
             </a>
           </li>
 
@@ -53,7 +53,7 @@ export const LecturePage = () => {
               className="menu"
               onClick={() => scrollToSection(section2Ref)}
             >
-              SMART TECHNOLOGY
+              GREEN / SMART TECHNOLOGY
             </a>
           </li>
 
@@ -72,7 +72,7 @@ export const LecturePage = () => {
       <div className="energetika" ref={section1Ref}>
         <img src="./lecture_1.jpg" />
         <div className="Info">
-          <h1>ЭНЕРГЕТИКА</h1>
+          <h1>ЭЛЕКТРОСНАБЖЕНИЕ</h1>
           <h2>
             Install the plugin and convert your designs to a responsive site.
           </h2>
@@ -84,7 +84,7 @@ export const LecturePage = () => {
       <div className="smart-technology" ref={section2Ref}>
         <img src="./lecture_2.jpg" />
         <div className="Info">
-          <h1>SMART TECHNOLOGY</h1>
+          <h1>GREEN / SMART TECHNOLOGY</h1>
           <h2>Browse dozens of templates. Click, duplicate, customize.</h2>
           <button>Get started</button>
         </div>
@@ -92,7 +92,7 @@ export const LecturePage = () => {
       <div className="life-save" ref={section3Ref}>
         <img src="./image_3.jpg" />
         <div className="Info">
-          <h1>БЕЗОПАСНОСТЬ ЖИЗНЕДЕЯТЕЛЬНОСТИ</h1>
+          <h1 style={{ fontSize: "45px" }}>БЕЗОПАСНОСТЬ ЖИЗНЕДЕЯТЕЛЬНОСТИ</h1>
           <h2>
             Install the plugin and convert your designs to a responsive site.
           </h2>

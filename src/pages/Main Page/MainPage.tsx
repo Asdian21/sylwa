@@ -36,7 +36,9 @@ export const MainPage = () => {
         section5Ref={section5Ref}
       />
       <section className="join-wind">
-        <h1>Welcome to the world of knowledge</h1>
+        <div className="shadow">
+          <h1>Welcome to the world of knowledge</h1>
+        </div>
       </section>
 
       <section className="lecture-wind" ref={section1Ref}>
@@ -68,7 +70,7 @@ export const MainPage = () => {
 
       <section className="metodichka-wind" ref={section5Ref}>
         <CenterDiv
-          heading="МЕТОДИЧКА"
+          heading="МЕТОДИЧЕСКОЕ ПОСОБИЕ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="ЧИТАТЬ"
           path="metodichka-page"

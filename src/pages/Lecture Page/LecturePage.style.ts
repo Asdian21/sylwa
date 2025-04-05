@@ -11,22 +11,22 @@ export const StyleLecturePage = styled.div`
   }
   .energetika {
     display: flex;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
-    margin: 0 100px;
+    margin: 0 80px;
   }
   .smart-technology {
     display: flex;
     flex-direction: row-reverse;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
-    margin: 0 100px;
+    margin: 0 80px;
   }
   .life-save {
     display: flex;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
-    margin: 0 100px;
+    margin: 0 80px 100px;
   }
 
   .Info {
@@ -46,7 +46,7 @@ export const StyleLecturePage = styled.div`
       font-family: "Inter", sans-serif;
       color: #888888;
     }
-    button {
+    /* button {
       width: 108px;
       height: 40px;
       background-color: #222222;
@@ -58,6 +58,45 @@ export const StyleLecturePage = styled.div`
       font-weight: bold;
       font-family: "Inter", sans-serif;
       font-size: 14px;
+    } */
+    /* From Uiverse.io by nikk7007 */
+    button {
+      width: 162px;
+      border-radius: 40px;
+      padding: 0.8em 1.2em;
+      border: 2px solid #17c3b2;
+      position: relative;
+      overflow: hidden;
+      background-color: transparent;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 16px;
+      transition: 0.3s;
+      z-index: 1;
+      font-family: inherit;
+      color: #17c3b2;
+    }
+
+    button::before {
+      content: "";
+      width: 0;
+      height: 300%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: #17c3b2;
+      transition: 0.5s ease;
+      display: block;
+      z-index: -1;
+    }
+
+    button:hover::before {
+      width: 105%;
+    }
+
+    button:hover {
+      color: #ffffff;
     }
   }
 
