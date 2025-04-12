@@ -16,7 +16,7 @@ export const StyleMainPage = styled.div`
         rgba(0, 0, 0, 0.75) 100%
       );
       h1 {
-        width: 480px;
+        width: 345px;
         color: white;
         font-size: 79px;
         display: flex;

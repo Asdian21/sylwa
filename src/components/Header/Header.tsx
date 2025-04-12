@@ -1,4 +1,7 @@
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { StyleHeader } from "./Header.style";
+import { useState, useEffect } from "react";
+import { NotMobileUl } from "./NotMobileUl/NotMobileUl";
 
 interface Props {
   scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
@@ -17,6 +20,23 @@ export const Header = ({
   section4Ref,
   section5Ref,
 }: Props) => {
+  // Состояние для отслеживания ширины экрана
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 840);
+  const [notMobile, setNotMobile] = useState<boolean>(window.innerWidth > 840);
+
+  // Эффект для обновления состояния при изменении размера окна
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 840); // Обновляем состояние
+      setNotMobile(window.innerWidth > 840);
+    };
+
+    // Добавляем слушателя на изменение размера окна
+    window.addEventListener("resize", handleResize);
+
+    // Убираем слушателя при размонтировании компонента
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <StyleHeader>
       <header>
@@ -29,57 +49,17 @@ export const Header = ({
               />
             </a>
           </div>
-          <ul>
-            <li>
-              <a
-                href=""
-                className="menu"
-                onClick={() => scrollToSection(section1Ref)}
-              >
-                ЛЕКЦИИ
-              </a>
-            </li>
-
-            <li>
-              <a
-                href=""
-                className="menu"
-                onClick={() => scrollToSection(section2Ref)}
-              >
-                ВИДЕОУРОКИ
-              </a>
-            </li>
-
-            <li>
-              <a
-                href=""
-                className="menu"
-                onClick={() => scrollToSection(section3Ref)}
-              >
-                ПРАКТИКА
-              </a>
-            </li>
-
-            <li>
-              <a
-                href=""
-                className="menu"
-                onClick={() => scrollToSection(section4Ref)}
-              >
-                ТЕСТЫ
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                className="menu"
-                onClick={() => scrollToSection(section5Ref)}
-              >
-                МЕТОДИЧЕСКОЕ ПОСОБИЕ
-              </a>
-            </li>
-          </ul>
-          <div></div>
+          {notMobile && (
+            <NotMobileUl
+              scrollToSection={scrollToSection}
+              section1Ref={section1Ref}
+              section2Ref={section2Ref}
+              section3Ref={section3Ref}
+              section4Ref={section4Ref}
+              section5Ref={section5Ref}
+            />
+          )}
+          <div>{isMobile && <BurgerMenu />}</div>
         </div>
       </header>
     </StyleHeader>

@@ -35,6 +35,7 @@ export const MainPage = () => {
         section4Ref={section4Ref}
         section5Ref={section5Ref}
       />
+
       <section className="join-wind">
         <div className="shadow">
           <h1>Welcome to the world of knowledge</h1>
