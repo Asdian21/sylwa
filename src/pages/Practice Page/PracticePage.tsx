@@ -76,7 +76,7 @@ export const PracticePage = () => {
           <h2>
             Install the plugin and convert your designs to a responsive site.
           </h2>
-          <button onClick={() => navigate("/energetika-lectures")}>
+          <button onClick={() => navigate("/energetic-practices")}>
             Get started
           </button>
         </div>

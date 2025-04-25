@@ -1,18 +1,17 @@
 import { CardList } from "../../../components/CardList/CardList";
 import { SearchBar } from "../../../components/SearchBar/SearchBar";
-import { StyleLectures } from "./Lectures.style";
+import { StyleEnergeticPractices } from "./EnergeticPractices.style";
 import { useState } from "react";
 
-interface LectureCard {
+interface PracticeCard {
   id: number;
   image: string;
   lessonName: string;
-
   buttonText: string;
   link: string;
 }
 
-const initialLectureCards: LectureCard[] = [
+const initialLectureCards: PracticeCard[] = [
   {
     id: 1,
     image: "./lectureCard.jpg",
@@ -20,7 +19,7 @@ const initialLectureCards: LectureCard[] = [
       "Интеллектуальные сети и сетевые технологии для зеленых технологий. Применение технологий Интернета вещей (IoT) и искусственного интеллекта для оптимизации энергопотребления.",
 
     buttonText: "Начать",
-    link: "/lecture_1",
+    link: "/energetic-practice_1",
   },
   {
     id: 2,
@@ -60,7 +59,7 @@ const initialLectureCards: LectureCard[] = [
   },
 ];
 
-export function Lectures() {
+export function EnergeticPractices() {
   const [searchQuery, setSearchQuery] = useState("");
 
   // Фильтрация по названию лекций (lessonName)
@@ -69,7 +68,7 @@ export function Lectures() {
   );
 
   return (
-    <StyleLectures>
+    <StyleEnergeticPractices>
       <div>
         <div
           style={{
@@ -78,11 +77,11 @@ export function Lectures() {
             marginTop: "30px",
           }}
         >
-          <h1>Поиск по лекциям</h1>
+          <h1>Поиск по практикам</h1>
           <SearchBar onSearch={setSearchQuery} />
         </div>
         <CardList cards={filteredCards} />
       </div>
-    </StyleLectures>
+    </StyleEnergeticPractices>
   );
 }

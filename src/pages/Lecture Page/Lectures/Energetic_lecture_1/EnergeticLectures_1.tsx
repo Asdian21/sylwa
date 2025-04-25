@@ -1,4 +1,4 @@
-import { StyleLecture_1 } from "./EnergeticLectures.style";
+import { StyleLecture_1 } from "./EnergeticLecture_1.style";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Quiz } from "../../../../components/Quiz/Quiz";
