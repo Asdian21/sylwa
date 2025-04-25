@@ -21,6 +21,7 @@ export const StyleBurgerMenu = styled.div`
 
   ul {
     list-style: none;
+    margin: auto 20px;
   }
 
   a {
@@ -119,7 +120,7 @@ export const StyleBurgerMenu = styled.div`
     background: var(--violet);
   }
 
-  .menu li a span {
+  .menu li a {
     position: absolute;
     top: 0;
     left: 0;
@@ -147,7 +148,7 @@ export const StyleBurgerMenu = styled.div`
     background-color: #245432;
     border-radius: 30px;
     top: 80px;
-    left: -100px;
+    left: -60px;
     transition-delay: 0.8s;
     transition: 1s ease-in-out;
   }
@@ -158,7 +159,7 @@ export const StyleBurgerMenu = styled.div`
     background-color: #245432;
     border-radius: 30px;
     top: 260px;
-    left: -150px;
+    left: -110px;
     transition-delay: 0.2s;
     transition: 1s ease-in-out;
   }
@@ -169,7 +170,7 @@ export const StyleBurgerMenu = styled.div`
     background-color: #245432;
     border-radius: 30px;
     top: 155px;
-    left: -190px;
+    left: -150px;
     transition-delay: 0.3s;
     transition: 1s ease-in-out;
   }
@@ -180,7 +181,7 @@ export const StyleBurgerMenu = styled.div`
     background-color: #245432;
     border-radius: 30px;
     top: 155px;
-    left: -10px;
+    left: 30px;
     transition-delay: 0.4s;
     transition: 1s ease-in-out;
   }
@@ -191,7 +192,7 @@ export const StyleBurgerMenu = styled.div`
     background-color: #245432;
     border-radius: 30px;
     top: 260px;
-    left: -50px;
+    left: -10px;
     transition-delay: 0.4s;
     transition: 1s ease-in-out;
   }

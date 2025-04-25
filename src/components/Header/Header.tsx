@@ -45,7 +45,7 @@ export const Header = ({
             <a href="/">
               <img
                 src="./eko_icon.png"
-                style={{ width: "50px", height: "50px" }}
+                style={{ width: "50px", height: "50px", marginLeft: "20px" }}
               />
             </a>
           </div>
@@ -59,7 +59,18 @@ export const Header = ({
               section5Ref={section5Ref}
             />
           )}
-          <div>{isMobile && <BurgerMenu />}</div>
+          <div>
+            {isMobile && (
+              <BurgerMenu
+                scrollToSection={scrollToSection}
+                section1Ref={section1Ref}
+                section2Ref={section2Ref}
+                section3Ref={section3Ref}
+                section4Ref={section4Ref}
+                section5Ref={section5Ref}
+              />
+            )}
+          </div>
         </div>
       </header>
     </StyleHeader>

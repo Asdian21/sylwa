@@ -3,57 +3,51 @@ import styled from "styled-components";
 export const StyleCenterDiv = styled.div`
   @font-face {
     font-family: "Inter";
-    src: url("./src/assets/fonts/Inter_18pt-Black.ttf") format("ttf");
+    src: url("./src/assets/fonts/Inter_18pt-Black.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
   }
+
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  margin: 190px auto;
-  width: 390px;
+  gap: 3rem;
+  margin: 10vh auto;
+  width: 90%;
+  max-width: 390px;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 1rem;
 
   h1 {
-    max-width: 360px;
-    font-size: 48px;
+    font-size: 6vw;
+    max-width: 90%;
     color: white;
     font-family: "Inter", sans-serif;
   }
+
   h2 {
-    width: 390px;
-    font-weight: medium;
-    font-size: 24px;
+    font-size: 4.5vw;
     color: rgba(255, 255, 255, 0.86);
+    font-weight: 500;
   }
+
   button {
-    width: 120px;
-    padding: 15px;
+    width: 60%;
+    min-width: 150px;
+    padding: 0.75rem;
     border-radius: 8px;
     background-color: #fff;
     color: #333;
-    font-size: 14px;
+    font-size: 1rem;
     border: none;
     font-weight: 600;
     font-family: "Inter", sans-serif;
   }
-  /* html,
-  body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-  } */
 
   .glow-on-hover {
-    width: 220px;
+    width: 70%;
+    max-width: 220px;
     height: 50px;
     border: none;
     outline: none;
@@ -126,6 +120,36 @@ export const StyleCenterDiv = styled.div`
     }
     100% {
       background-position: 0 0;
+    }
+  }
+
+  /* Дополнительная адаптация для совсем маленьких экранов */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 7vw;
+    }
+
+    h2 {
+      font-size: 5vw;
+    }
+
+    button {
+      width: 80%;
+      font-size: 0.9rem;
+    }
+
+    .glow-on-hover {
+      height: 45px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
     }
   }
 `;

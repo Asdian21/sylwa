@@ -22,6 +22,10 @@ const routerConfig = createBrowserRouter([
     path: "lecture_1",
     element: <Lecture_1 />,
   },
+  {
+    path: "practice-page",
+    element: "",
+  },
 ]);
 
 function App() {
