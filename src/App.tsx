@@ -3,7 +3,7 @@ import "./App.css";
 import { MainPage } from "./pages/Main Page/MainPage";
 import { LecturePage } from "./pages/Lecture Page/LecturePage";
 import { Lectures } from "./pages/Lecture Page/Lectures/Lectures";
-import { Lecture_1 } from "./pages/Lecture Page/Lectures/Lecture_1/Lecture_1";
+import { Lecture_1 } from "./pages/Lecture Page/Lectures/Energetic_lectures/EnergeticLectures";
 import { PracticePage } from "./pages/Practice Page/Practices/PracticePage";
 
 const routerConfig = createBrowserRouter([
