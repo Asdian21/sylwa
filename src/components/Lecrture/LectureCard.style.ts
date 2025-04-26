@@ -23,6 +23,10 @@ export const StyleLectureCard = styled.div`
 
     h3 {
       font: bold 20px "Inter";
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     p {
       font: medium 16px "Inter";
