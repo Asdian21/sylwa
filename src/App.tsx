@@ -3,7 +3,7 @@ import "./App.css";
 import { MainPage } from "./pages/Main Page/MainPage";
 import { LecturePage } from "./pages/Lecture Page/LecturePage";
 import { Lectures } from "./pages/Lecture Page/Lectures/EnergeticLectures";
-import { Lecture_1 } from "./pages/Lecture Page/Lectures/Energetic_lecture_1/EnergeticLectures_1";
+import { Lecture_1 } from "./pages/Lecture Page/Lectures/Energetic_lecture_1/EnergeticLecture_1";
 import { PracticePage } from "./pages/Practice Page/PracticePage";
 import { EnergeticPractices } from "./pages/Practice Page/Practices/EnergeticPractices";
 import { EnergeticPractice_1 } from "./pages/Practice Page/Practices/Energetic_practice_1/EnergeticPractice_1";

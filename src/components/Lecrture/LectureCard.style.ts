@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const StyleLectureCard = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 274px;
+  width: 90%;
   border-radius: 20px;
   overflow: hidden;
   img {
+    border-radius: 35px;
     object-fit: cover;
     background-repeat: no-repeat;
-    scale: 1.4;
-    margin-bottom: 30px;
+    width: 30%;
   }
   .textContainer {
     display: flex;
@@ -23,10 +22,14 @@ export const StyleLectureCard = styled.div`
 
     h3 {
       font: bold 20px "Inter";
-      display: -webkit-box;
+      /* display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
-      overflow: hidden;
+      overflow: hidden; */
+      a {
+        text-decoration: none;
+        color: #222222;
+      }
     }
     p {
       font: medium 16px "Inter";
