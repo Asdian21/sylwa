@@ -26,7 +26,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Величины и параметры, характеризующие электроэнергию. Единицы измерений. Основные законы электротехники. Одно - и трехфазные системы электроснабжения переменного тока. Источники и потребители систем электроснабжения постоянного тока.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_2",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Первичные и вторичные источники систем электроснабжения. Возобновляемые и невозобновляемые источники энергии. Источники электропитания",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_3",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Солнечная энергия. Информация о солнечной энергии. Типы солнечных устройств. Солнечные коллекторы",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_4",
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Анализ развития элементов технологического базиса концепции Smart Grid ветроэнергетических устройствах и электрических станциях. Экологический аспект.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_5",
   },
   {
     id: 6,
@@ -58,7 +58,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Механизмы и формы организации и управления процессом разработки и внедрения концепции Smart Grid в электрических станциях и подстанциях систем электроснабжения инфокоммуникационных объектов.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_6",
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Роль устройств передачи и распределения электрической энергии инфокоммуникационных объектов в Smart Grid",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_7",
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Преобразование и распределение электрической энергии. Основные элементы. Одно и трехфазные трансформаторы, устройство и принцип их работы.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_8",
   },
   {
     id: 9,
@@ -82,7 +82,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Выпрямители и преобразователи электроснабжения инфокоммуникационных объектов. Стабилизаторы напряжения и тока. Фильтры.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_9",
   },
   {
     id: 10,
@@ -90,7 +90,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Бесперебойные источники энергоснабжения. Дизельные генераторы. Аккумуляторы.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_10",
   },
   {
     id: 11,
@@ -98,14 +98,14 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Устройства управления энергоэффективностью и ресурсоэффективностью в инфокоммуникационных системах на базе системы концепции Smart Grid",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_11",
   },
   {
     id: 12,
     image: "./lectureCard.jpg",
     lessonName: "Релейная защита и атоматика в электроэнергетических системах",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_12",
   },
   {
     id: 13,
@@ -113,7 +113,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Способы и устройства снижения потерь электрической энергии на объектах и устройствах инфокоммуникаций на базе системы концепции Smart Grid",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_13",
   },
   {
     id: 14,
@@ -121,7 +121,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Учёт и контроль производства и потребления электрической энергии в инфокоммуникационных системах. Система АСКУЭ.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_14",
   },
   {
     id: 15,
@@ -129,7 +129,7 @@ const initialLectureCards: LectureCard[] = [
     lessonName:
       "Климотехнические устройства инфокоммуникационных систем. Безопасность обслуживания и электроснабжения.",
     // buttonText: "Читать",
-    link: "",
+    link: "/lecture_15",
   },
 ];
 

@@ -1,14 +1,14 @@
-import { StyleLecture_1 } from "./EnergeticLecture_1.style";
+import { StyleLecture_3 } from "./EnergeticLecture_3.style";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Quiz } from "../../../../components/Quiz/Quiz";
 import { useLoadSlides } from "../../../../hooks/useLoadSlides";
 
-export const Lecture_1 = () => {
-  const slides = useLoadSlides("/lectures/lecture_1_slides_output");
+export const Lecture_3 = () => {
+  const slides = useLoadSlides("/lectures/lecture_3_slides_output");
 
   return (
-    <StyleLecture_1>
+    <StyleLecture_3>
       <Splide
         options={{
           rewind: true,
@@ -30,6 +30,6 @@ export const Lecture_1 = () => {
 
       <div className="text__container"></div>
       <Quiz />
-    </StyleLecture_1>
+    </StyleLecture_3>
   );
 };

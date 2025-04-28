@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyleLecture_1 = styled.div`
+export const StyleLecture_2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
