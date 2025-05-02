@@ -21,7 +21,7 @@ export const StyleMainPage = styled.div`
         color: white;
         font-size: 79px;
         display: flex;
-        margin-top: 224px;
+        margin-top: 120px;
         margin-left: 80px;
       }
     }

@@ -4,7 +4,7 @@ export const StyleLecture_5 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  background-color: #bfbfbfba;
 
   .splide {
     width: 60vw;
@@ -15,6 +15,7 @@ export const StyleLecture_5 = styled.div`
     border-radius: 10px;
     overflow: visible;
     position: relative; /* Чтобы стрелки позиционировались относительно слайдера */
+    margin-top: 30px;
   }
 
   .splide__slide img {
@@ -53,23 +54,41 @@ export const StyleLecture_5 = styled.div`
 
   .splide__arrow--prev {
     left: -60px;
-    background-image: url("./left__arrow.png");
+    background-image: url("./left-arrow.png");
     background-size: contain;
-    width: 40px;
   }
 
   .splide__arrow--next {
     right: -60px;
-    background-image: url("./right__arrow.png");
+    background-image: url("./right-arrow.png");
     background-size: contain;
-    width: 45px;
+  }
+
+  .splide__arrow--prev svg {
+    display: none;
+  }
+  .splide__arrow--next svg {
+    display: none;
   }
 
   .text__container {
     display: flex;
+    flex-direction: column;
     margin: 50px auto;
+    padding: 20px;
     width: calc(100% - 400px);
-    height: 1000px;
     border: 3px solid yellowgreen;
+    background: transparent;
+    text-align: justify;
+
+    img {
+      width: 70%;
+      display: flex;
+      margin: 10px auto;
+    }
+
+    p {
+      font-family: "Lovelo", sans-serif;
+    }
   }
 `;

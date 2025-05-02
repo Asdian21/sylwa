@@ -49,6 +49,9 @@ export const Header = ({
               />
             </a>
           </div>
+          <div>
+            <span style={{ color: "white" }}>Amurova N. Yu.</span>
+          </div>
           {notMobile && (
             <NotMobileUl
               scrollToSection={scrollToSection}

@@ -7,13 +7,15 @@ export const StyleQuiz = styled.div`
     width: 640px;
     margin: auto;
     margin-top: 150px;
-    background-color: #ffffff;
+    margin-bottom: 150px;
+    background-color: transparent;
     color: #262626;
     display: flex;
     flex-direction: column;
     gap: 20px;
     border-radius: 10px;
     padding: 40px 50px;
+    border: 1px solid black;
   }
 
   .container h1 {
