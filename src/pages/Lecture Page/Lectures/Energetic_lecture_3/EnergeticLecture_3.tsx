@@ -3,8 +3,9 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Quiz } from "../../../../components/Quiz/Quiz";
 import { useLoadSlides } from "../../../../hooks/useLoadSlides";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import mammoth from "mammoth";
+import SplideCore from "@splidejs/splide";
 
 export const Lecture_3 = () => {
   const slides = useLoadSlides("/lectures/lecture_3_slides_output");
@@ -26,6 +27,23 @@ export const Lecture_3 = () => {
     loadDocxFile();
   }, []);
 
+  const splideRef = useRef<SplideCore | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!splideRef.current) return;
+
+      if (e.key === "ArrowRight") {
+        splideRef.current.go("+1");
+      } else if (e.key === "ArrowLeft") {
+        splideRef.current.go("-1");
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <StyleLecture_3>
       <Splide
@@ -37,6 +55,9 @@ export const Lecture_3 = () => {
           autoplay: false,
           pagination: false,
           arrows: true,
+        }}
+        onMounted={(splide: any) => {
+          splideRef.current = splide;
         }}
         aria-label="Lecture Slides"
       >
