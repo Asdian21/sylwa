@@ -8,7 +8,7 @@ import mammoth from "mammoth";
 import SplideCore from "@splidejs/splide";
 
 export const Lecture_13 = () => {
-  const slides = useLoadSlides("/lectures/lecture_13_slides_output");
+  const slides = useLoadSlides("/lectures/lecture_13_slides");
   const [lectureText, setLectureText] = useState<string>("");
 
   useEffect(() => {
