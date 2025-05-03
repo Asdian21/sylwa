@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const useLoadSlides = (
   path: string,
   prefix = "slide_",
-  extension = "jpg"
+  extension = "webp"
 ) => {
   const [slides, setSlides] = useState<string[]>([]);
 
