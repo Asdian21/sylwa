@@ -21,6 +21,22 @@ import { Lecture_12 } from "./pages/Lecture Page/Lectures/Energetic_lecture_12/E
 import { Lecture_13 } from "./pages/Lecture Page/Lectures/Energetic_lecture_13/EnergeticLecture_13";
 import { Lecture_14 } from "./pages/Lecture Page/Lectures/Energetic_lecture_14/EnergeticLecture_14";
 import { Lecture_15 } from "./pages/Lecture Page/Lectures/Energetic_lecture_15/EnergeticLecture_15";
+import { GreenSmartLectures } from "./pages/Lecture Page/GreenSmartLectures/GreenSmartLectures";
+import { GreenSmart_lecture_1 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_1/GreenSmart_lecture_1";
+import { GreenSmart_lecture_2 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_2/GreenSmart_lecture_2";
+import { GreenSmart_lecture_3 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_3/GreenSmart_lecture_3";
+import { GreenSmart_lecture_4 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_4/GreenSmart_lecture_4";
+import { GreenSmart_lecture_5 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_5/GreenSmart_lecture_5";
+import { GreenSmart_lecture_6 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_6/GreenSmart_lecture_6";
+import { GreenSmart_lecture_7 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_7/GreenSmart_lecture_7";
+import { GreenSmart_lecture_8 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_8/GreenSmart_lecture_8";
+import { GreenSmart_lecture_9 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_9/GreenSmart_lecture_9";
+import { GreenSmart_lecture_10 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_10/GreenSmart_lecture_10";
+import { GreenSmart_lecture_11 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_11/GreenSmart_lecture_11";
+import { GreenSmart_lecture_12 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_12/GreenSmart_lecture_12";
+import { GreenSmart_lecture_13 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_13/GreenSmart_lecture_13";
+import { GreenSmart_lecture_14 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_14/GreenSmart_lecture_14";
+import { GreenSmart_lecture_15 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_15/GreenSmart_lecture_15";
 
 const routerConfig = createBrowserRouter([
   {
@@ -115,6 +131,77 @@ const routerConfig = createBrowserRouter([
     path: "energetic-practice_1",
     element: <EnergeticPractice_1 />,
   },
+
+  //
+  /* Green / Smart lectures start*/
+  //
+  {
+    path: "green-smart-technologies-lectures",
+    element: <GreenSmartLectures />,
+  },
+  {
+    path: "green-smart-lecture_1",
+    element: <GreenSmart_lecture_1 />,
+  },
+  {
+    path: "green-smart-lecture_2",
+    element: <GreenSmart_lecture_2 />,
+  },
+  {
+    path: "green-smart-lecture_3",
+    element: <GreenSmart_lecture_3 />,
+  },
+  {
+    path: "green-smart-lecture_4",
+    element: <GreenSmart_lecture_4 />,
+  },
+  {
+    path: "green-smart-lecture_5",
+    element: <GreenSmart_lecture_5 />,
+  },
+  {
+    path: "green-smart-lecture_6",
+    element: <GreenSmart_lecture_6 />,
+  },
+  {
+    path: "green-smart-lecture_7",
+    element: <GreenSmart_lecture_7 />,
+  },
+  {
+    path: "green-smart-lecture_8",
+    element: <GreenSmart_lecture_8 />,
+  },
+  {
+    path: "green-smart-lecture_9",
+    element: <GreenSmart_lecture_9 />,
+  },
+  {
+    path: "green-smart-lecture_10",
+    element: <GreenSmart_lecture_10 />,
+  },
+  {
+    path: "green-smart-lecture_11",
+    element: <GreenSmart_lecture_11 />,
+  },
+  {
+    path: "green-smart-lecture_12",
+    element: <GreenSmart_lecture_12 />,
+  },
+  {
+    path: "green-smart-lecture_13",
+    element: <GreenSmart_lecture_13 />,
+  },
+  {
+    path: "green-smart-lecture_14",
+    element: <GreenSmart_lecture_14 />,
+  },
+  {
+    path: "green-smart-lecture_15",
+    element: <GreenSmart_lecture_15 />,
+  },
+  //
+  /* Green / Smart lectures end*/
+  //
 ]);
 
 function App() {

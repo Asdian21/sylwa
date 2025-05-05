@@ -86,7 +86,11 @@ export const LecturePage = () => {
         <div className="Info">
           <h1>GREEN / SMART TECHNOLOGY</h1>
           <h2>Browse dozens of templates. Click, duplicate, customize.</h2>
-          <button>Get started</button>
+          <button
+            onClick={() => navigate("/green-smart-technologies-lectures")}
+          >
+            Get started
+          </button>
         </div>
       </div>
       <div className="life-save" ref={section3Ref}>

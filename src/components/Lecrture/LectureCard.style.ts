@@ -19,6 +19,8 @@ export const StyleLectureCard = styled.div`
     text-align: center;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    line-height: 20px;
 
     h3 {
       font: bold 20px "Inter";
