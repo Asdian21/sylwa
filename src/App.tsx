@@ -67,6 +67,22 @@ import { BJDPractice_13 } from "./pages/Practice Page/BJD/bjd_practice_13/bjd_pr
 import { BJDPractice_14 } from "./pages/Practice Page/BJD/bjd_practice_14/bjd_practice_14";
 import { BJDPractice_15 } from "./pages/Practice Page/BJD/bjd_practice_15/bjd_practice_15";
 import { BJDPractices } from "./pages/Practice Page/BJD/BJDPractices";
+import { GreenSmartPractices } from "./pages/Practice Page/GreenSmartPractice/GreenSmartPractice";
+import { GreenSmartPractice_1 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_1/green-smart_practice_1";
+import { GreenSmartPractice_2 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_2/green-smart_practice_2";
+import { GreenSmartPractice_3 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_3/green-smart_practice_3";
+import { GreenSmartPractice_4 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_4/green-smart_practice_4";
+import { GreenSmartPractice_5 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_5/green-smart_practice_5";
+import { GreenSmartPractice_6 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_6/green-smart_practice_6";
+import { GreenSmartPractice_7 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_7/green-smart_practice_7";
+import { GreenSmartPractice_8 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_8/green-smart_practice_8";
+import { GreenSmartPractice_9 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_9/green-smart_practice_9";
+import { GreenSmartPractice_10 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_10/green-smart_practice_10";
+import { GreenSmartPractice_11 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_11/green-smart_practice_11";
+import { GreenSmartPractice_12 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_12/green-smart_practice_12";
+import { GreenSmartPractice_13 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_13/green-smart_practice_13";
+import { GreenSmartPractice_14 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_14/green-smart_practice_14";
+import { GreenSmartPractice_15 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_15/green-smart_practice_15";
 
 const routerConfig = createBrowserRouter([
   {
@@ -222,6 +238,14 @@ const routerConfig = createBrowserRouter([
   //
 
   //
+  /* BJD Lecture Pages Start */
+  //
+
+  //
+  /* BJD Lecture Pages End */
+  //
+
+  //
   /* Energetic Practice Pages Start */
   //
 
@@ -296,6 +320,79 @@ const routerConfig = createBrowserRouter([
 
   //
   /* Energetic Practice Pages End */
+  //
+
+  //
+  /* Green / Smart Practice Pages Start */
+  //
+
+  {
+    path: "green-smart-practices",
+    element: <GreenSmartPractices />,
+  },
+  {
+    path: "green-smart-practice_1",
+    element: <GreenSmartPractice_1 />,
+  },
+  {
+    path: "green-smart-practice_2",
+    element: <GreenSmartPractice_2 />,
+  },
+  {
+    path: "green-smart-practice_3",
+    element: <GreenSmartPractice_3 />,
+  },
+  {
+    path: "green-smart-practice_4",
+    element: <GreenSmartPractice_4 />,
+  },
+  {
+    path: "green-smart-practice_5",
+    element: <GreenSmartPractice_5 />,
+  },
+  {
+    path: "green-smart-practice_6",
+    element: <GreenSmartPractice_6 />,
+  },
+  {
+    path: "green-smart-practice_7",
+    element: <GreenSmartPractice_7 />,
+  },
+  {
+    path: "green-smart-practice_8",
+    element: <GreenSmartPractice_8 />,
+  },
+  {
+    path: "green-smart-practice_9",
+    element: <GreenSmartPractice_9 />,
+  },
+  {
+    path: "green-smart-practice_10",
+    element: <GreenSmartPractice_10 />,
+  },
+  {
+    path: "green-smart-practice_11",
+    element: <GreenSmartPractice_11 />,
+  },
+  {
+    path: "green-smart-practice_12",
+    element: <GreenSmartPractice_12 />,
+  },
+  {
+    path: "green-smart-practice_13",
+    element: <GreenSmartPractice_13 />,
+  },
+  {
+    path: "green-smart-practice_14",
+    element: <GreenSmartPractice_14 />,
+  },
+  {
+    path: "green-smart-practice_15",
+    element: <GreenSmartPractice_15 />,
+  },
+
+  //
+  /* Green / Smart Practice Pages End */
   //
 
   //
