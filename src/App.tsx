@@ -37,6 +37,20 @@ import { GreenSmart_lecture_12 } from "./pages/Lecture Page/GreenSmartLectures/G
 import { GreenSmart_lecture_13 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_13/GreenSmart_lecture_13";
 import { GreenSmart_lecture_14 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_14/GreenSmart_lecture_14";
 import { GreenSmart_lecture_15 } from "./pages/Lecture Page/GreenSmartLectures/GreenSmart_lecture_15/GreenSmart_lecture_15";
+import { EnergeticPractice_2 } from "./pages/Practice Page/Practices/Energetic_practice_2/Energetic_practice_2";
+import { EnergeticPractice_3 } from "./pages/Practice Page/Practices/Energetic_practice_3/Energetic_practice_3";
+import { EnergeticPractice_4 } from "./pages/Practice Page/Practices/Energetic_practice_4/Energetic_practice_4";
+import { EnergeticPractice_5 } from "./pages/Practice Page/Practices/Energetic_practice_5/Energetic_practice_5";
+import { EnergeticPractice_6 } from "./pages/Practice Page/Practices/Energetic_practice_6/Energetic_practice_6";
+import { EnergeticPractice_7 } from "./pages/Practice Page/Practices/Energetic_practice_7/Energetic_practice_7";
+import { EnergeticPractice_8 } from "./pages/Practice Page/Practices/Energetic_practice_8/Energetic_practice_8";
+import { EnergeticPractice_9 } from "./pages/Practice Page/Practices/Energetic_practice_9/Energetic_practice_9";
+import { EnergeticPractice_10 } from "./pages/Practice Page/Practices/Energetic_practice_10/Energetic_practice_10";
+import { EnergeticPractice_11 } from "./pages/Practice Page/Practices/Energetic_practice_11/Energetic_practice_11";
+import { EnergeticPractice_12 } from "./pages/Practice Page/Practices/Energetic_practice_12/Energetic_practice_12";
+import { EnergeticPractice_13 } from "./pages/Practice Page/Practices/Energetic_practice_13/Energetic_practice_13";
+import { EnergeticPractice_14 } from "./pages/Practice Page/Practices/Energetic_practice_14/Energetic_practice_14";
+import { EnergeticPractice_15 } from "./pages/Practice Page/Practices/Energetic_practice_15/Energetic_practice_15";
 
 const routerConfig = createBrowserRouter([
   {
@@ -119,18 +133,6 @@ const routerConfig = createBrowserRouter([
   //
   /* Energetic lectures end */
   //---------------------------------------------
-  {
-    path: "practice-page",
-    element: <PracticePage />,
-  },
-  {
-    path: "energetic-practices",
-    element: <EnergeticPractices />,
-  },
-  {
-    path: "energetic-practice_1",
-    element: <EnergeticPractice_1 />,
-  },
 
   //
   /* Green / Smart lectures start*/
@@ -202,6 +204,75 @@ const routerConfig = createBrowserRouter([
   //
   /* Green / Smart lectures end*/
   //
+
+  {
+    path: "practice-page",
+    element: <PracticePage />,
+  },
+  {
+    path: "energetic-practices",
+    element: <EnergeticPractices />,
+  },
+  {
+    path: "energetic-practice_1",
+    element: <EnergeticPractice_1 />,
+  },
+  {
+    path: "energetic-practice_2",
+    element: <EnergeticPractice_2 />,
+  },
+  {
+    path: "energetic-practice_3",
+    element: <EnergeticPractice_3 />,
+  },
+  {
+    path: "energetic-practice_4",
+    element: <EnergeticPractice_4 />,
+  },
+  {
+    path: "energetic-practice_5",
+    element: <EnergeticPractice_5 />,
+  },
+  {
+    path: "energetic-practice_6",
+    element: <EnergeticPractice_6 />,
+  },
+  {
+    path: "energetic-practice_7",
+    element: <EnergeticPractice_7 />,
+  },
+  {
+    path: "energetic-practice_8",
+    element: <EnergeticPractice_8 />,
+  },
+  {
+    path: "energetic-practice_9",
+    element: <EnergeticPractice_9 />,
+  },
+  {
+    path: "energetic-practice_10",
+    element: <EnergeticPractice_10 />,
+  },
+  {
+    path: "energetic-practice_11",
+    element: <EnergeticPractice_11 />,
+  },
+  {
+    path: "energetic-practice_12",
+    element: <EnergeticPractice_12 />,
+  },
+  {
+    path: "energetic-practice_13",
+    element: <EnergeticPractice_13 />,
+  },
+  {
+    path: "energetic-practice_14",
+    element: <EnergeticPractice_14 />,
+  },
+  {
+    path: "energetic-practice_15",
+    element: <EnergeticPractice_15 />,
+  },
 ]);
 
 function App() {

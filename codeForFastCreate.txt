@@ -1,0 +1,6 @@
+1..15 | ForEach-Object { mkdir "Energetic_practice_$_" | Out-Null; ni "Energetic_practice_$_\Energetic_practice_$_.tsx" -ItemType File }
+
+Номера от 1 до 15
+Папка называется Energetic_practice
+Путь будет выглядеть так: Energetic_practice\Energetic_practice.tsx
+$ означает номер, который будет подставляться

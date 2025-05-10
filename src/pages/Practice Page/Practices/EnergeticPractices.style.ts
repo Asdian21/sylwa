@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const StyleEnergeticPractices = styled.div`
   .gridCards {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 20px;
-    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 50px 200px;
+    justify-content: center;
+    align-items: center;
   }
 `;
