@@ -51,6 +51,22 @@ import { EnergeticPractice_12 } from "./pages/Practice Page/Practices/Energetic_
 import { EnergeticPractice_13 } from "./pages/Practice Page/Practices/Energetic_practice_13/Energetic_practice_13";
 import { EnergeticPractice_14 } from "./pages/Practice Page/Practices/Energetic_practice_14/Energetic_practice_14";
 import { EnergeticPractice_15 } from "./pages/Practice Page/Practices/Energetic_practice_15/Energetic_practice_15";
+import { BJDPractice_1 } from "./pages/Practice Page/BJD/bjd_practice_1/bjd_practice_1";
+import { BJDPractice_2 } from "./pages/Practice Page/BJD/bjd_practice_2/bjd_practice_2";
+import { BJDPractice_3 } from "./pages/Practice Page/BJD/bjd_practice_3/bjd_practice_3";
+import { BJDPractice_4 } from "./pages/Practice Page/BJD/bjd_practice_4/bjd_practice_4";
+import { BJDPractice_5 } from "./pages/Practice Page/BJD/bjd_practice_5/bjd_practice_5";
+import { BJDPractice_6 } from "./pages/Practice Page/BJD/bjd_practice_6/bjd_practice_6";
+import { BJDPractice_7 } from "./pages/Practice Page/BJD/bjd_practice_7/bjd_practice_7";
+import { BJDPractice_8 } from "./pages/Practice Page/BJD/bjd_practice_8/bjd_practice_8";
+import { BJDPractice_9 } from "./pages/Practice Page/BJD/bjd_practice_9/bjd_practice_9";
+import { BJDPractice_10 } from "./pages/Practice Page/BJD/bjd_practice_10/bjd_practice_10";
+import { BJDPractice_11 } from "./pages/Practice Page/BJD/bjd_practice_11/bjd_practice_11";
+import { BJDPractice_12 } from "./pages/Practice Page/BJD/bjd_practice_12/bjd_practice_12";
+import { BJDPractice_13 } from "./pages/Practice Page/BJD/bjd_practice_13/bjd_practice_13";
+import { BJDPractice_14 } from "./pages/Practice Page/BJD/bjd_practice_14/bjd_practice_14";
+import { BJDPractice_15 } from "./pages/Practice Page/BJD/bjd_practice_15/bjd_practice_15";
+import { BJDPractices } from "./pages/Practice Page/BJD/BJDPractices";
 
 const routerConfig = createBrowserRouter([
   {
@@ -205,6 +221,10 @@ const routerConfig = createBrowserRouter([
   /* Green / Smart lectures end*/
   //
 
+  //
+  /* Energetic Practice Pages Start */
+  //
+
   {
     path: "practice-page",
     element: <PracticePage />,
@@ -273,6 +293,83 @@ const routerConfig = createBrowserRouter([
     path: "energetic-practice_15",
     element: <EnergeticPractice_15 />,
   },
+
+  //
+  /* Energetic Practice Pages End */
+  //
+
+  //
+  /* BJD Practice Pages Start */
+  //
+
+  {
+    path: "BJD",
+    element: <BJDPractices />,
+  },
+  {
+    path: "bjd-practice_1",
+    element: <BJDPractice_1 />,
+  },
+  {
+    path: "bjd-practice_2",
+    element: <BJDPractice_2 />,
+  },
+  {
+    path: "bjd-practice_3",
+    element: <BJDPractice_3 />,
+  },
+  {
+    path: "bjd-practice_4",
+    element: <BJDPractice_4 />,
+  },
+  {
+    path: "bjd-practice_5",
+    element: <BJDPractice_5 />,
+  },
+  {
+    path: "bjd-practice_6",
+    element: <BJDPractice_6 />,
+  },
+  {
+    path: "bjd-practice_7",
+    element: <BJDPractice_7 />,
+  },
+  {
+    path: "bjd-practice_8",
+    element: <BJDPractice_8 />,
+  },
+  {
+    path: "bjd-practice_9",
+    element: <BJDPractice_9 />,
+  },
+  {
+    path: "bjd-practice_10",
+    element: <BJDPractice_10 />,
+  },
+  {
+    path: "bjd-practice_11",
+    element: <BJDPractice_11 />,
+  },
+  {
+    path: "bjd-practice_12",
+    element: <BJDPractice_12 />,
+  },
+  {
+    path: "bjd-practice_13",
+    element: <BJDPractice_13 />,
+  },
+  {
+    path: "bjd-practice_14",
+    element: <BJDPractice_14 />,
+  },
+  {
+    path: "bjd-practice_15",
+    element: <BJDPractice_15 />,
+  },
+
+  //
+  /* BJD Practice Pages End */
+  //
 ]);
 
 function App() {

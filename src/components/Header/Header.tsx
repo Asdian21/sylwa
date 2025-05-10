@@ -50,7 +50,9 @@ export const Header = ({
             </a>
           </div>
           <div>
-            <span style={{ color: "white" }}>Amurova N. Yu.</span>
+            <span style={{ color: "white", textTransform: "uppercase" }}>
+              Амурова Н. Ю.
+            </span>
           </div>
           {notMobile && (
             <NotMobileUl
