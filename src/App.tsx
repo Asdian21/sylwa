@@ -83,6 +83,21 @@ import { GreenSmartPractice_12 } from "./pages/Practice Page/GreenSmartPractice/
 import { GreenSmartPractice_13 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_13/green-smart_practice_13";
 import { GreenSmartPractice_14 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_14/green-smart_practice_14";
 import { GreenSmartPractice_15 } from "./pages/Practice Page/GreenSmartPractice/green-smart_practice_15/green-smart_practice_15";
+import { BJDLectures } from "./pages/Lecture Page/BJD_Lectures/BJD_Lectures";
+import { BJD_lecture_1 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_1/BJD_lecture_1";
+import { BJD_lecture_2 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_2/BJD_lecture_2";
+import { BJD_lecture_3 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_3/BJD_lecture_3";
+import { BJD_lecture_4 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_4/BJD_lecture_4";
+import { BJD_lecture_6 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_6/BJD_lecture_6";
+import { BJD_lecture_7 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_7/BJD_lecture_7";
+import { BJD_lecture_8 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_8/BJD_lecture_8";
+import { BJD_lecture_9 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_9/BJD_lecture_9";
+import { BJD_lecture_10 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_10/BJD_lecture_10";
+import { BJD_lecture_11 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_11/BJD_lecture_11";
+import { BJD_lecture_12 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_12/BJD_lecture_12";
+import { BJD_lecture_13 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_13/BJD_lecture_13";
+import { BJD_lecture_14 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_14/BJD_lecture_14";
+import { BJD_lecture_5 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_5/BJD_lecture_5";
 
 const routerConfig = createBrowserRouter([
   {
@@ -240,7 +255,72 @@ const routerConfig = createBrowserRouter([
   //
   /* BJD Lecture Pages Start */
   //
-
+  {
+    path: "BJD-lectures",
+    element: <BJDLectures />,
+  },
+  {
+    path: "bjd-lecture_1",
+    element: <BJD_lecture_1 />,
+  },
+  {
+    path: "bjd-lecture_2",
+    element: <BJD_lecture_2 />,
+  },
+  {
+    path: "bjd-lecture_3",
+    element: <BJD_lecture_3 />,
+  },
+  {
+    path: "bjd-lecture_4",
+    element: <BJD_lecture_4 />,
+  },
+  {
+    path: "bjd-lecture_5",
+    element: (
+      <BJD_lecture_5
+        slidesPath_1="./public/BJD Lectures/Presentations/presentation_5_slides"
+        slidesPath_2="./public/BJD Lectures/Presentations/presentation_6_slides"
+        docxPath="./public/BJD Lectures/Lectures/lecture_5-6.docx"
+      />
+    ),
+  },
+  {
+    path: "bjd-lecture_6",
+    element: <BJD_lecture_6 />,
+  },
+  {
+    path: "bjd-lecture_7",
+    element: <BJD_lecture_7 />,
+  },
+  {
+    path: "bjd-lecture_8",
+    element: <BJD_lecture_8 />,
+  },
+  {
+    path: "bjd-lecture_9",
+    element: <BJD_lecture_9 />,
+  },
+  {
+    path: "bjd-lecture_10",
+    element: <BJD_lecture_10 />,
+  },
+  {
+    path: "bjd-lecture_11",
+    element: <BJD_lecture_11 />,
+  },
+  {
+    path: "bjd-lecture_12",
+    element: <BJD_lecture_12 />,
+  },
+  {
+    path: "bjd-lecture_13",
+    element: <BJD_lecture_13 />,
+  },
+  {
+    path: "bjd-lecture_14",
+    element: <BJD_lecture_14 />,
+  },
   //
   /* BJD Lecture Pages End */
   //

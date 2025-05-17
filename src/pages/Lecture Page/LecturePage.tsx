@@ -100,7 +100,7 @@ export const LecturePage = () => {
           <h2>
             Install the plugin and convert your designs to a responsive site.
           </h2>
-          <button>Get started</button>
+          <button onClick={() => navigate("/BJD-lectures")}>Get started</button>
         </div>
       </div>
     </StyleLecturePage>
