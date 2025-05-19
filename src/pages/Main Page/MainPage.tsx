@@ -83,7 +83,7 @@ export const MainPage = () => {
           heading="ТЕСТЫ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="ПРОЙТИ"
-          path="tests-page"
+          path="test-page"
         />
       </section>
 

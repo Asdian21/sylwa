@@ -12,13 +12,16 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
+    "antd": "^5.25.1",
     "flickity": "^3.0.0",
     "lucide-react": "^0.484.0",
     "mammoth": "^1.9.0",
     "mdb-react-ui-kit": "^9.0.0",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.29.0",
+    "recharts": "^2.15.3",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {
