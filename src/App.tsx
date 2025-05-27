@@ -99,6 +99,7 @@ import { BJD_lecture_13 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_13
 import { BJD_lecture_14 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_14/BJD_lecture_14";
 import { BJD_lecture_5 } from "./pages/Lecture Page/BJD_Lectures/BJD_lecture_5/BJD_lecture_5";
 import { TestPage } from "./pages/Test Page/TestPage";
+import { VideoPage } from "./pages/Video Page/VideoPage";
 
 const routerConfig = createBrowserRouter([
   {
@@ -112,6 +113,10 @@ const routerConfig = createBrowserRouter([
   {
     path: "test-page",
     element: <TestPage />,
+  },
+  {
+    path: "video-page",
+    element: <VideoPage />,
   },
   //---------------------------------------------
   /* Energetic lectures begin */

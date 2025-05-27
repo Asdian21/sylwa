@@ -20,7 +20,7 @@ export function SearchBar({ onSearch }: SearchBarProps) {
         <input
           type="text"
           className="input-search"
-          placeholder="Поиск лекций..."
+          placeholder="Поиск..."
           onChange={handleChange}
         />
       </div>

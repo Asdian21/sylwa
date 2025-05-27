@@ -65,7 +65,7 @@ export const MainPage = () => {
           heading="ВИДЕО УРОКИ"
           desc="Go from design to site with Framer, the web builder for creative pros."
           button="СМОТРЕТЬ"
-          path="video-classes-page"
+          path="video-page"
         />
       </section>
 
