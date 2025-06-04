@@ -27,14 +27,16 @@ export const MainPage = () => {
 
   return (
     <StyleMainPage>
-      <Header
-        scrollToSection={scrollToSection}
-        section1Ref={section1Ref}
-        section2Ref={section2Ref}
-        section3Ref={section3Ref}
-        section4Ref={section4Ref}
-        section5Ref={section5Ref}
-      />
+      <div className="stickyHeader">
+        <Header
+          scrollToSection={scrollToSection}
+          section1Ref={section1Ref}
+          section2Ref={section2Ref}
+          section3Ref={section3Ref}
+          section4Ref={section4Ref}
+          section5Ref={section5Ref}
+        />
+      </div>
 
       <section className="join-wind">
         <div className="shadow">

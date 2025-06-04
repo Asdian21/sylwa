@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const StyleMainPage = styled.div`
+  .stickyHeader {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
   .join-wind {
     display: flex;
     height: 100vh;
