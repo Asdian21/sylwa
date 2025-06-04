@@ -80,4 +80,52 @@ export const StyleMainPage = styled.div`
       margin: 200px auto;
     }
   }
+
+  /* Scroll styles start */
+
+  .custom-progress-slider .splide__pagination {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+  }
+
+  .custom-progress-slider .splide__pagination__page {
+    width: 60px;
+    height: 4px;
+    background-color: #ccc;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .custom-progress-slider .splide__pagination__page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #00bcd4;
+    transition: none;
+    animation-fill-mode: forwards;
+  }
+
+  .custom-progress-slider .splide__pagination__page.is-active::before {
+    animation: progressBar 5s linear forwards;
+  }
+
+  @keyframes progressBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Scroll styles end */
 `;

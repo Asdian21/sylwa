@@ -4,22 +4,10 @@ import { useState, useEffect } from "react";
 import { NotMobileUl } from "./NotMobileUl/NotMobileUl";
 
 interface Props {
-  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-  section1Ref: React.RefObject<HTMLDivElement>;
-  section2Ref: React.RefObject<HTMLDivElement>;
-  section3Ref: React.RefObject<HTMLDivElement>;
-  section4Ref: React.RefObject<HTMLDivElement>;
-  section5Ref: React.RefObject<HTMLDivElement>;
+  goToSlide: (index: number) => void;
 }
 
-export const Header = ({
-  scrollToSection,
-  section1Ref,
-  section2Ref,
-  section3Ref,
-  section4Ref,
-  section5Ref,
-}: Props) => {
+export const Header = ({ goToSlide }: Props) => {
   // Состояние для отслеживания ширины экрана
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 840);
   const [notMobile, setNotMobile] = useState<boolean>(window.innerWidth > 840);
@@ -54,28 +42,8 @@ export const Header = ({
               Амурова Н. Ю.
             </span>
           </div>
-          {notMobile && (
-            <NotMobileUl
-              scrollToSection={scrollToSection}
-              section1Ref={section1Ref}
-              section2Ref={section2Ref}
-              section3Ref={section3Ref}
-              section4Ref={section4Ref}
-              section5Ref={section5Ref}
-            />
-          )}
-          <div>
-            {isMobile && (
-              <BurgerMenu
-                scrollToSection={scrollToSection}
-                section1Ref={section1Ref}
-                section2Ref={section2Ref}
-                section3Ref={section3Ref}
-                section4Ref={section4Ref}
-                section5Ref={section5Ref}
-              />
-            )}
-          </div>
+          {notMobile && <NotMobileUl goToSlide={goToSlide} />}
+          <div>{isMobile && <BurgerMenu goToSlide={goToSlide} />}</div>
         </div>
       </header>
     </StyleHeader>

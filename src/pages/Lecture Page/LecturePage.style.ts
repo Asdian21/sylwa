@@ -4,6 +4,8 @@ export const StyleLecturePage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 100px;
+  background-color: rgb(127, 158, 121);
+  height: 100vh;
 
   img {
     width: 660px;

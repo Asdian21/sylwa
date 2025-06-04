@@ -111,6 +111,10 @@ const routerConfig = createBrowserRouter([
     element: <LecturePage />,
   },
   {
+    path: "practice-page",
+    element: <PracticePage />,
+  },
+  {
     path: "test-page",
     element: <TestPage />,
   },
@@ -339,10 +343,6 @@ const routerConfig = createBrowserRouter([
   /* Energetic Practice Pages Start */
   //
 
-  {
-    path: "practice-page",
-    element: <PracticePage />,
-  },
   {
     path: "energetic-practices",
     element: <EnergeticPractices />,

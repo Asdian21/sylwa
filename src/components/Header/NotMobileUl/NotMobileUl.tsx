@@ -1,69 +1,37 @@
 import { StyleNotMobileUl } from "./NotMobileUl.style";
 
 interface Props {
-  scrollToSection: (ref: React.RefObject<HTMLDivElement>) => void;
-  section1Ref: React.RefObject<HTMLDivElement>;
-  section2Ref: React.RefObject<HTMLDivElement>;
-  section3Ref: React.RefObject<HTMLDivElement>;
-  section4Ref: React.RefObject<HTMLDivElement>;
-  section5Ref: React.RefObject<HTMLDivElement>;
+  goToSlide: (index: number) => void;
 }
 
-export const NotMobileUl = ({
-  scrollToSection,
-  section1Ref,
-  section2Ref,
-  section3Ref,
-  section4Ref,
-  section5Ref,
-}: Props) => {
+export const NotMobileUl = ({ goToSlide }: Props) => {
   return (
     <StyleNotMobileUl>
       <li>
-        <a
-          href=""
-          className="menu"
-          onClick={() => scrollToSection(section1Ref)}
-        >
+        <a href="" className="menu" onClick={() => goToSlide(0)}>
           ЛЕКЦИИ
         </a>
       </li>
 
       <li>
-        <a
-          href=""
-          className="menu"
-          onClick={() => scrollToSection(section2Ref)}
-        >
+        <a href="" className="menu" onClick={() => goToSlide(2)}>
           ВИДЕОУРОКИ
         </a>
       </li>
 
       <li>
-        <a
-          href=""
-          className="menu"
-          onClick={() => scrollToSection(section3Ref)}
-        >
+        <a href="" className="menu" onClick={() => goToSlide(1)}>
           ПРАКТИКА
         </a>
       </li>
 
       <li>
-        <a
-          href=""
-          className="menu"
-          onClick={() => scrollToSection(section4Ref)}
-        >
+        <a href="" className="menu" onClick={() => goToSlide(4)}>
           ТЕСТЫ
         </a>
       </li>
       <li>
-        <a
-          href=""
-          className="menu"
-          onClick={() => scrollToSection(section5Ref)}
-        >
+        <a href="" className="menu" onClick={() => goToSlide(3)}>
           МЕТОДИЧЕСКОЕ ПОСОБИЕ
         </a>
       </li>
