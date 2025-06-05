@@ -4,7 +4,6 @@ export const StyleLecturePage = styled.div`
   display: flex;
   flex-direction: column;
   gap: 100px;
-  background-color: rgb(127, 158, 121);
   height: 100vh;
 
   img {
@@ -48,20 +47,7 @@ export const StyleLecturePage = styled.div`
       font-family: "Inter", sans-serif;
       color: #888888;
     }
-    /* button {
-      width: 108px;
-      height: 40px;
-      background-color: #222222;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 8px;
-      font-weight: bold;
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-    } */
-    /* From Uiverse.io by nikk7007 */
+
     button {
       width: 162px;
       border-radius: 40px;
@@ -136,4 +122,38 @@ export const StyleLecturePage = styled.div`
       }
     }
   }
+
+  /* Pagination styles start */
+
+  .custom-progress-slider .splide__pagination__page {
+    width: 20px;
+    border-radius: 99px;
+  }
+
+  .custom-progress-slider .splide__pagination__page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 99px;
+    width: 0;
+    background-color: #00bcd4;
+    animation-fill-mode: forwards;
+  }
+
+  .custom-progress-slider .splide__pagination__page.is-active::before {
+    animation: progressBar 5s linear forwards;
+  }
+
+  @keyframes progressBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* Pagination styles end */
 `;

@@ -28,9 +28,6 @@ export const LecturePage = () => {
           keyboard: "global",
         }}
         className="custom-progress-slider"
-        // onMounted={(splide: any) => {
-        //   splideRef.current = splide;
-        // }}
       >
         <SplideSlide>
           <div className="energetika">
