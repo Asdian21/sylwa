@@ -33,24 +33,28 @@ export const HeaderForPages = () => {
           </li>
 
           <li>
-            <a href="" className="menu" onClick={() => navigate(2)}>
+            <a href="" className="menu" onClick={() => navigate("/video-page")}>
               ВИДЕОУРОКИ
             </a>
           </li>
 
           <li>
-            <a href="" className="menu" onClick={() => navigate(1)}>
+            <a
+              href=""
+              className="menu"
+              onClick={() => navigate("/practice-page")}
+            >
               ПРАКТИКА
             </a>
           </li>
 
           <li>
-            <a href="" className="menu" onClick={() => navigate(4)}>
+            <a href="" className="menu" onClick={() => navigate("/test-page")}>
               ТЕСТЫ
             </a>
           </li>
           <li>
-            <a href="" className="menu" onClick={() => navigate(3)}>
+            <a href="" className="menu" onClick={() => navigate("/")}>
               МЕТОДИЧЕСКОЕ ПОСОБИЕ
             </a>
           </li>

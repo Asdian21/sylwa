@@ -2,6 +2,7 @@ import { CardList } from "../../../components/CardList/CardList";
 import { SearchBar } from "../../../components/SearchBar/SearchBar";
 import { useState } from "react";
 import { StyleBJDPractice } from "./BJDPractices.style";
+import { HeaderForPages } from "../../../components/Header/HeaderForPages/HeaderForPages";
 
 interface PracticeCard {
   id: number;
@@ -14,7 +15,7 @@ interface PracticeCard {
 const initialLectureCards: PracticeCard[] = [
   {
     id: 1,
-    image: "./lectureCard.jpg",
+    image: "./images/img_1.webp",
     lessonName:
       "«Производственное освещение» Исследование освещённости рабочих мест",
     buttonText: "Начать",
@@ -22,14 +23,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 2,
-    image: "./lectureCard.jpg",
+    image: "./images/img_2.webp",
     lessonName: "«Производственное освещение» Расчёт освещённости рабочих мест",
     buttonText: "Узнать больше",
     link: "/bjd-practice_2",
   },
   {
     id: 3,
-    image: "./lectureCard.jpg",
+    image: "./images/img_3.webp",
     lessonName:
       "Интенсивность шума. Исследование звукоизоляции ограждающих конструкций.",
     buttonText: "Читать",
@@ -37,7 +38,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 4,
-    image: "./lectureCard.jpg",
+    image: "./images/img_4.webp",
     lessonName:
       "Расчёт интенсивности шума. Исследование звукоизоляции ограждающих конструкций",
     buttonText: "Попробовать",
@@ -45,14 +46,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 5,
-    image: "./lectureCard.jpg",
+    image: "./images/img_5.webp",
     lessonName: "Виды электромагнитных излучений",
     buttonText: "Попробовать",
     link: "/bjd-practice_5",
   },
   {
     id: 6,
-    image: "./lectureCard.jpg",
+    image: "./images/img_6.webp",
     lessonName:
       "Расчёт параметров устройств защиты от электромагнитных излучений",
     buttonText: "Попробовать",
@@ -60,14 +61,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 7,
-    image: "./lectureCard.jpg",
+    image: "./images/img_7.webp",
     lessonName: "Расчёт напряжённости поля ВЧ-диапазона",
     buttonText: "Попробовать",
     link: "/bjd-practice_7",
   },
   {
     id: 8,
-    image: "./lectureCard.jpg",
+    image: "./images/img_8.webp",
     lessonName:
       "Воздействие радиации на организм человека. Расчёт напряжённости поля УВЧ-диапазона.",
     buttonText: "Попробовать",
@@ -75,14 +76,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 9,
-    image: "./lectureCard.jpg",
+    image: "./images/img_9.webp",
     lessonName: "Измерение электрического сопротивления тела человека",
     buttonText: "Попробовать",
     link: "/bjd-practice_9",
   },
   {
     id: 10,
-    image: "./lectureCard.jpg",
+    image: "./images/img_10.webp",
     lessonName:
       "Исследование условий безопасности в зоне растекания тока в земле",
     buttonText: "Попробовать",
@@ -90,7 +91,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 11,
-    image: "./lectureCard.jpg",
+    image: "./images/img_11.webp",
     lessonName:
       "Исследование электробезопасности трёхфазных сетей переменного тока напряжением до 1000 в",
     buttonText: "Попробовать",
@@ -98,21 +99,21 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 12,
-    image: "./lectureCard.jpg",
+    image: "./images/img_12.webp",
     lessonName: "Расчёт заземляющих устройств",
     buttonText: "Попробовать",
     link: "/bjd-practice_12",
   },
   {
     id: 13,
-    image: "./lectureCard.jpg",
+    image: "./images/img_13.webp",
     lessonName: "Пожарная безопасность",
     buttonText: "Попробовать",
     link: "/bjd-practice_13",
   },
   {
     id: 14,
-    image: "./lectureCard.jpg",
+    image: "./images/img_14.webp",
     lessonName:
       "Изучение способов оказания первой доврачебной помощи пострадавшем от действия тока",
     buttonText: "Попробовать",
@@ -120,7 +121,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 15,
-    image: "./lectureCard.jpg",
+    image: "./images/img_15.webp",
     lessonName: "Промышленные аварии и расследование несчастных случаев",
     buttonText: "Попробовать",
     link: "/bjd-practice_15",
@@ -137,6 +138,7 @@ export function BJDPractices() {
 
   return (
     <StyleBJDPractice>
+      <HeaderForPages />
       <div>
         <div
           style={{

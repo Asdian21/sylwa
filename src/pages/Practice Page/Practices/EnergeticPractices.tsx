@@ -1,4 +1,5 @@
 import { CardList } from "../../../components/CardList/CardList";
+import { HeaderForPages } from "../../../components/Header/HeaderForPages/HeaderForPages";
 import { SearchBar } from "../../../components/SearchBar/SearchBar";
 import { StyleEnergeticPractices } from "./EnergeticPractices.style";
 import { useState } from "react";
@@ -14,7 +15,7 @@ interface PracticeCard {
 const initialLectureCards: PracticeCard[] = [
   {
     id: 1,
-    image: "./lectureCard.jpg",
+    image: "./images/img_1.webp",
     lessonName:
       "Законы и нормативные документы Республики Узбекистан об использовании электрической энергии. Концепция развития энергетической отрасли Республики Узбекистан.",
 
@@ -23,7 +24,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 2,
-    image: "./lectureCard.jpg",
+    image: "./images/img_2.webp",
     lessonName:
       "Применение первичных и вторичных источников питания в области инфокоммуникации и ИТ",
     buttonText: "Узнать больше",
@@ -31,7 +32,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 3,
-    image: "./lectureCard.jpg",
+    image: "./images/img_3.webp",
     lessonName:
       "Устройства для регулирования напряжения в сетях промышленных предприятий",
     buttonText: "Читать",
@@ -39,7 +40,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 4,
-    image: "./lectureCard.jpg",
+    image: "./images/img_4.webp",
     lessonName:
       "Солнечная энергетика, выбор параметров устройств солнечных элементов",
     buttonText: "Попробовать",
@@ -47,7 +48,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 5,
-    image: "./lectureCard.jpg",
+    image: "./images/img_5.webp",
     lessonName:
       "Выбор и расчет устройств управления энергоэффективностью и ресурсоэффективностью ветроэнергетических установок ",
     buttonText: "Попробовать",
@@ -55,14 +56,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 6,
-    image: "./lectureCard.jpg",
+    image: "./images/img_6.webp",
     lessonName: "Многофазные системы электрического питания устройств связи",
     buttonText: "Попробовать",
     link: "/energetic-practice_6",
   },
   {
     id: 7,
-    image: "./lectureCard.jpg",
+    image: "./images/img_7.webp",
     lessonName:
       "Параметры и выбор трансформаторов, основные определения и принцип действия",
     buttonText: "Попробовать",
@@ -70,14 +71,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 8,
-    image: "./lectureCard.jpg",
+    image: "./images/img_8.webp",
     lessonName: "Расчет параметров работы трансформатора",
     buttonText: "Попробовать",
     link: "/energetic-practice_8",
   },
   {
     id: 9,
-    image: "./lectureCard.jpg",
+    image: "./images/img_9.webp",
     lessonName:
       "Принцип работ устройств регулирования напряжения в системах энергоснабжения ИК. Выпрямители",
     buttonText: "Попробовать",
@@ -85,14 +86,14 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 10,
-    image: "./lectureCard.jpg",
+    image: "./images/img_10.webp",
     lessonName: "Методика проектирования систем бесперебойного питания",
     buttonText: "Попробовать",
     link: "/energetic-practice_10",
   },
   {
     id: 11,
-    image: "./lectureCard.jpg",
+    image: "./images/img_11.webp",
     lessonName:
       "Инверторы Напряжения - Выбор Инвертора (Преобразователи Напряжения)",
     buttonText: "Попробовать",
@@ -100,7 +101,7 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 12,
-    image: "./lectureCard.jpg",
+    image: "./images/img_12.webp",
     lessonName:
       "Принципы работы устройств преобразования тока электрической энергии в системах электроснабжения ИК и ИТС",
     buttonText: "Попробовать",
@@ -108,21 +109,21 @@ const initialLectureCards: PracticeCard[] = [
   },
   {
     id: 13,
-    image: "./lectureCard.jpg",
+    image: "./images/img_13.webp",
     lessonName: "Сглаживающие фильтры питания",
     buttonText: "Попробовать",
     link: "/energetic-practice_13",
   },
   {
     id: 14,
-    image: "./lectureCard.jpg",
+    image: "./images/img_14.webp",
     lessonName: "Расчёт входного фильтра импульсного стабилизатора",
     buttonText: "Попробовать",
     link: "/energetic-practice_14",
   },
   {
     id: 15,
-    image: "./lectureCard.jpg",
+    image: "./images/img_15.webp",
     lessonName:
       "Электроснабжение интеллектуального здания. Климотехнические устройства инфокоммуникационных систем",
     buttonText: "Попробовать",
@@ -140,6 +141,8 @@ export function EnergeticPractices() {
 
   return (
     <StyleEnergeticPractices>
+      <HeaderForPages />
+
       <div>
         <div
           style={{

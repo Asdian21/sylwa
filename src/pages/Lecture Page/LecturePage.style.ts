@@ -48,44 +48,100 @@ export const StyleLecturePage = styled.div`
       color: #888888;
     }
 
+    /* Button styles start */
+
     button {
-      width: 162px;
-      border-radius: 40px;
-      padding: 0.8em 1.2em;
-      border: 2px solid #17c3b2;
+      width: 60%;
+      min-width: 150px;
+      padding: 0.75rem;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #333;
+      font-size: 1rem;
+      border: none;
+      font-weight: 600;
+      font-family: "Inter", sans-serif;
+    }
+
+    .glow-on-hover {
+      width: 70%;
+      max-width: 220px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #111;
+      cursor: pointer;
       position: relative;
-      overflow: hidden;
-      background-color: transparent;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 16px;
-      transition: 0.3s;
-      z-index: 1;
-      font-family: inherit;
-      color: #17c3b2;
+      z-index: 0;
+      border-radius: 10px;
     }
 
-    button::before {
+    .glow-on-hover:before {
       content: "";
-      width: 0;
-      height: 300%;
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      background: #17c3b2;
-      transition: 0.5s ease;
-      display: block;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
       z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
     }
 
-    button:hover::before {
-      width: 105%;
+    .glow-on-hover:active {
+      color: #000;
     }
 
-    button:hover {
-      color: #ffffff;
+    .glow-on-hover:active:after {
+      background: transparent;
     }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    /* Button styles end */
   }
 
   .header {

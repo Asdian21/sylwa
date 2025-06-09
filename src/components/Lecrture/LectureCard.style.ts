@@ -5,6 +5,7 @@ export const StyleLectureCard = styled.div`
   width: 90%;
   border-radius: 20px;
   overflow: hidden;
+  height: 200px;
   img {
     border-radius: 35px;
     object-fit: cover;

@@ -88,7 +88,7 @@ export const StyleLectureViewer = styled.div`
     }
 
     p {
-      font-family: "Lovelo", sans-serif;
+      /* font-family: "Lovelo", sans-serif; */
     }
   }
 `;

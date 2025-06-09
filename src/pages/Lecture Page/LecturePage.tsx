@@ -38,7 +38,10 @@ export const LecturePage = () => {
                 Install the plugin and convert your designs to a responsive
                 site.
               </h2>
-              <button onClick={() => navigate("/energetika-lectures")}>
+              <button
+                className="glow-on-hover"
+                onClick={() => navigate("/energetika-lectures")}
+              >
                 Get started
               </button>
             </div>
@@ -51,6 +54,7 @@ export const LecturePage = () => {
               <h1>GREEN / SMART TECHNOLOGY</h1>
               <h2>Browse dozens of templates. Click, duplicate, customize.</h2>
               <button
+                className="glow-on-hover"
                 onClick={() => navigate("/green-smart-technologies-lectures")}
               >
                 Get started
@@ -69,7 +73,10 @@ export const LecturePage = () => {
                 Install the plugin and convert your designs to a responsive
                 site.
               </h2>
-              <button onClick={() => navigate("/BJD-lectures")}>
+              <button
+                className="glow-on-hover"
+                onClick={() => navigate("/BJD-lectures")}
+              >
                 Get started
               </button>
             </div>
