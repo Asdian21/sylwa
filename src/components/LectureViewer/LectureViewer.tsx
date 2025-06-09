@@ -1,11 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import mammoth from "mammoth";
 import SplideCore from "@splidejs/splide";
-import { Quiz } from "../../components/Quiz/Quiz";
 import { useLoadSlides } from "../../hooks/useLoadSlides";
 import { StyleLectureViewer } from "./LectureViewer.style";
+import { renderAsync } from "docx-preview";
 
 interface LectureViewerProps {
   slidesPath: string;
@@ -14,8 +13,7 @@ interface LectureViewerProps {
 
 export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
   const slides = useLoadSlides(slidesPath, "slide_", "webp");
-  const [lectureText, setLectureText] = useState<string>("");
-
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const splideRef = useRef<SplideCore | null>(null);
 
   useEffect(() => {
@@ -23,8 +21,20 @@ export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
       try {
         const response = await fetch(docxPath);
         const arrayBuffer = await response.arrayBuffer();
-        const result = await mammoth.convertToHtml({ arrayBuffer });
-        setLectureText(result.value);
+
+        if (containerRef.current) {
+          containerRef.current.innerHTML = ""; // очистка
+          await renderAsync(arrayBuffer, containerRef.current, undefined, {
+            inWrapper: true,
+            className: "docx",
+            ignoreWidth: false,
+            ignoreHeight: false,
+            ignoreFonts: false,
+            breakPages: true,
+            experimental: false,
+            ignoreLastRenderedPageBreak: true,
+          });
+        }
       } catch (error) {
         console.error("Ошибка при загрузке .docx:", error);
       }
@@ -67,12 +77,7 @@ export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
         ))}
       </Splide>
 
-      <div
-        className="text__container"
-        dangerouslySetInnerHTML={{ __html: lectureText }}
-      />
-
-      <Quiz />
+      <div className="text__container" ref={containerRef} />
     </StyleLectureViewer>
   );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { renderAsync } from "docx-preview";
-import { Quiz } from "../../components/Quiz/Quiz";
+// import { Quiz } from "../../components/Quiz/Quiz";
 import { StylePracticeViewer } from "./PracticeViewer.style";
 import { useLocation } from "react-router-dom";
 
@@ -74,7 +74,7 @@ export const PracticeViewer = ({ docxPath }: PracticeViewerProps) => {
   return (
     <StylePracticeViewer>
       <div className="text__container" ref={containerRef} />
-      <Quiz />
+      {/* <Quiz /> */}
     </StylePracticeViewer>
   );
 };

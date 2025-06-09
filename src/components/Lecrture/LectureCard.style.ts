@@ -10,7 +10,7 @@ export const StyleLectureCard = styled.div`
     border-radius: 35px;
     object-fit: cover;
     background-repeat: no-repeat;
-    width: 30%;
+    min-width: 300px;
   }
   .textContainer {
     display: flex;
