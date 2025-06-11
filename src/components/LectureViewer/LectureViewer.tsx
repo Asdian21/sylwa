@@ -5,6 +5,7 @@ import SplideCore from "@splidejs/splide";
 import { useLoadSlides } from "../../hooks/useLoadSlides";
 import { StyleLectureViewer } from "./LectureViewer.style";
 import { renderAsync } from "docx-preview";
+import { HeaderForPages } from "../Header/HeaderForPages/HeaderForPages";
 
 interface LectureViewerProps {
   slidesPath: string;
@@ -56,6 +57,8 @@ export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
 
   return (
     <StyleLectureViewer>
+      <HeaderForPages />
+
       <Splide
         options={{
           rewind: true,

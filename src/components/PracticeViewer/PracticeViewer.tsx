@@ -3,6 +3,7 @@ import { renderAsync } from "docx-preview";
 // import { Quiz } from "../../components/Quiz/Quiz";
 import { StylePracticeViewer } from "./PracticeViewer.style";
 import { useLocation } from "react-router-dom";
+import { HeaderForPages } from "../Header/HeaderForPages/HeaderForPages";
 
 interface PracticeViewerProps {
   docxPath: string;
@@ -73,6 +74,8 @@ export const PracticeViewer = ({ docxPath }: PracticeViewerProps) => {
 
   return (
     <StylePracticeViewer>
+      <HeaderForPages />
+
       <div className="text__container" ref={containerRef} />
       {/* <Quiz /> */}
     </StylePracticeViewer>

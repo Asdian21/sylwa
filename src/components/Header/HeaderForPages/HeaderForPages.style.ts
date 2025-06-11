@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyleHeaderForPages = styled.div`
+  width: 100%;
   .header {
     display: flex;
     justify-content: space-around;
