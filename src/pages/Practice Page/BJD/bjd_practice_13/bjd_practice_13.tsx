@@ -2,5 +2,5 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { PracticeViewer } from "../../../../components/PracticeViewer/PracticeViewer";
 
 export const BJDPractice_13 = () => {
-  return <PracticeViewer docxPath="./BJD/bjd_practice_13.docx" />;
+  return <PracticeViewer pdfPath="./BJD/bjd_practice_13.pdf" />;
 };

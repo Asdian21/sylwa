@@ -1,21 +1,28 @@
-import { useEffect, useRef, useState } from "react";
-import { renderAsync } from "docx-preview";
-// import { Quiz } from "../../components/Quiz/Quiz";
+import { useEffect } from "react";
 import { StylePracticeViewer } from "./PracticeViewer.style";
 import { useLocation } from "react-router-dom";
 import { HeaderForPages } from "../Header/HeaderForPages/HeaderForPages";
 
 interface PracticeViewerProps {
-  docxPath: string;
+  pdfPath: string;
 }
 
-export const PracticeViewer = ({ docxPath }: PracticeViewerProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+export const PracticeViewer = ({ pdfPath }: PracticeViewerProps) => {
   const { pathname } = useLocation();
   const SCROLL_KEY = `scroll-position-${pathname}`;
-  const [isDocxLoaded, setIsDocxLoaded] = useState(false);
 
-  // 👉 Сохраняем scroll при прокрутке
+  // 👉 Восстановление scroll
+  useEffect(() => {
+    const savedScroll = localStorage.getItem(SCROLL_KEY);
+    if (savedScroll) {
+      window.scrollTo({
+        top: parseInt(savedScroll, 10),
+        behavior: "auto",
+      });
+    }
+  }, [pathname]);
+
+  // 👉 Сохранение scroll
   useEffect(() => {
     const handleScroll = () => {
       localStorage.setItem(SCROLL_KEY, window.scrollY.toString());
@@ -28,56 +35,17 @@ export const PracticeViewer = ({ docxPath }: PracticeViewerProps) => {
     };
   }, [pathname]);
 
-  // 👉 Загружаем docx и после — восстанавливаем scroll
-  useEffect(() => {
-    const loadDocxFile = async () => {
-      try {
-        const response = await fetch(docxPath);
-        const arrayBuffer = await response.arrayBuffer();
-
-        if (containerRef.current) {
-          containerRef.current.innerHTML = "";
-
-          await renderAsync(arrayBuffer, containerRef.current, undefined, {
-            inWrapper: true,
-            ignoreWidth: false,
-            ignoreHeight: false,
-            ignoreFonts: false,
-            breakPages: true,
-            ignoreLastRenderedPageBreak: true,
-            experimental: false,
-            className: "docx",
-          });
-
-          setIsDocxLoaded(true); // ✅ Помечаем, что docx загружен
-        }
-      } catch (error) {
-        console.error("Ошибка при загрузке .docx:", error);
-      }
-    };
-
-    loadDocxFile();
-  }, [docxPath]);
-
-  // 👉 После загрузки docx восстанавливаем scroll
-  useEffect(() => {
-    if (isDocxLoaded) {
-      const savedScroll = localStorage.getItem(SCROLL_KEY);
-      if (savedScroll) {
-        window.scrollTo({
-          top: parseInt(savedScroll, 10),
-          behavior: "auto",
-        });
-      }
-    }
-  }, [isDocxLoaded]);
-
   return (
     <StylePracticeViewer>
       <HeaderForPages />
-
-      <div className="text__container" ref={containerRef} />
-      {/* <Quiz /> */}
+      <div className="pdf-container">
+        <embed
+          src={pdfPath}
+          type="application/pdf"
+          width="100%"
+          height="1000px"
+        />
+      </div>
     </StylePracticeViewer>
   );
 };

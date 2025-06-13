@@ -4,7 +4,7 @@ export const BJD_lecture_10 = () => {
   return (
     <LectureViewer
       slidesPath="/BJD Lectures/Presentations/presentation_10_slides"
-      docxPath="/BJD Lectures/Lectures/lecture_10.docx"
+      pdfPath="/BJD Lectures/Lectures/lecture_10.pdf"
     />
   );
 };

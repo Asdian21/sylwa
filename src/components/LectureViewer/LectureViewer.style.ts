@@ -71,8 +71,15 @@ export const StyleLectureViewer = styled.div`
     display: none;
   }
 
-  .text__container .docx p {
-    text-indent: 2em;
-    margin: 0.5em 0;
+  .pdf-container {
+    margin: 20px auto;
+    width: 100%;
+    border: 3px solid yellowgreen;
+    background: white;
+    text-align: center;
+
+    embed {
+      border: none;
+    }
   }
 `;

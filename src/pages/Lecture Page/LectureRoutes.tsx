@@ -135,7 +135,7 @@ export const bjdLectureRoutes = [
       <BJD_lecture_5
         slidesPath_1="./public/BJD Lectures/Presentations/presentation_5_slides"
         slidesPath_2="./public/BJD Lectures/Presentations/presentation_6_slides"
-        docxPath="./public/BJD Lectures/Lectures/lecture_5-6.docx"
+        pdfPath="./public/BJD Lectures/Lectures/lecture_5-6.pdf"
       />
     ),
   },

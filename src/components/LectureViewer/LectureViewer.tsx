@@ -4,45 +4,42 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import SplideCore from "@splidejs/splide";
 import { useLoadSlides } from "../../hooks/useLoadSlides";
 import { StyleLectureViewer } from "./LectureViewer.style";
-import { renderAsync } from "docx-preview";
 import { HeaderForPages } from "../Header/HeaderForPages/HeaderForPages";
+import { useLocation } from "react-router-dom";
 
 interface LectureViewerProps {
   slidesPath: string;
-  docxPath: string;
+  pdfPath: string;
 }
 
-export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
+export const LectureViewer = ({ slidesPath, pdfPath }: LectureViewerProps) => {
   const slides = useLoadSlides(slidesPath, "slide_", "webp");
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const splideRef = useRef<SplideCore | null>(null);
+  const { pathname } = useLocation();
+  const SCROLL_KEY = `scroll-position-${pathname}`;
+
+  // Прокрутка
+  useEffect(() => {
+    const savedScroll = localStorage.getItem(SCROLL_KEY);
+    if (savedScroll) {
+      window.scrollTo({
+        top: parseInt(savedScroll, 10),
+        behavior: "auto",
+      });
+    }
+  }, [pathname]);
 
   useEffect(() => {
-    const loadDocxFile = async () => {
-      try {
-        const response = await fetch(docxPath);
-        const arrayBuffer = await response.arrayBuffer();
-
-        if (containerRef.current) {
-          containerRef.current.innerHTML = ""; // очистка
-          await renderAsync(arrayBuffer, containerRef.current, undefined, {
-            inWrapper: true,
-            className: "docx",
-            ignoreWidth: false,
-            ignoreHeight: false,
-            ignoreFonts: false,
-            breakPages: true,
-            experimental: false,
-            ignoreLastRenderedPageBreak: true,
-          });
-        }
-      } catch (error) {
-        console.error("Ошибка при загрузке .docx:", error);
-      }
+    const handleScroll = () => {
+      localStorage.setItem(SCROLL_KEY, window.scrollY.toString());
     };
 
-    loadDocxFile();
-  }, [docxPath]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      localStorage.setItem(SCROLL_KEY, window.scrollY.toString());
+    };
+  }, [pathname]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -80,7 +77,14 @@ export const LectureViewer = ({ slidesPath, docxPath }: LectureViewerProps) => {
         ))}
       </Splide>
 
-      <div className="text__container" ref={containerRef} />
+      <div className="pdf-container">
+        <embed
+          src={pdfPath}
+          type="application/pdf"
+          width="100%"
+          height="1000px"
+        />
+      </div>
     </StyleLectureViewer>
   );
 };

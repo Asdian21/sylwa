@@ -11,6 +11,7 @@ import {
   energeticLectureRoutes,
   greenSmartLectureRoutes,
 } from "./pages/Lecture Page/LectureRoutes";
+
 import {
   bjdPracticeRoutes,
   energeticPracticeRoutes,
@@ -33,7 +34,6 @@ const routerConfig = createBrowserRouter([
     path: "practice-page",
     element: <PracticePage />,
   },
-  // практика электроснабжение не работает
   ...energeticPracticeRoutes,
   ...greenSmartPracticeRoutes,
   ...bjdPracticeRoutes,

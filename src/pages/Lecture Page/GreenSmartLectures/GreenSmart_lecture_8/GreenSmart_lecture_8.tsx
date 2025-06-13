@@ -4,7 +4,7 @@ export const GreenSmart_lecture_8 = () => {
   return (
     <LectureViewer
       slidesPath="/GreenSmart Lectures/Presentations/presentation_8_slides"
-      docxPath="/GreenSmart Lectures/Lectures/lecture_8.docx"
+      pdfPath="/GreenSmart Lectures/Lectures/lecture_8.pdf"
     />
   );
 };

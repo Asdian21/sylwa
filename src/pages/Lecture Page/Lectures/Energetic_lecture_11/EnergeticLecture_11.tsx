@@ -4,7 +4,7 @@ export const Lecture_11 = () => {
   return (
     <LectureViewer
       slidesPath="/lectures/lecture_11_slides"
-      docxPath="/word_lectures/lecture_11.docx"
+      pdfPath="/word_lectures/lecture_11.pdf"
     />
   );
 };
