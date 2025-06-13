@@ -2,6 +2,7 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { useState } from "react";
 import { StyleVideoPage } from "./VideoPage.style";
 import { VideoCardList } from "../../components/VideoCardList/VideoСardList";
+import { HeaderForPages } from "../../components/Header/HeaderForPages/HeaderForPages";
 
 interface VideoCard {
   id: number;
@@ -336,6 +337,7 @@ export function VideoPage() {
 
   return (
     <StyleVideoPage>
+      <HeaderForPages />
       <div>
         <div
           style={{
