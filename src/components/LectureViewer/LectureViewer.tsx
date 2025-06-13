@@ -76,15 +76,18 @@ export const LectureViewer = ({ slidesPath, pdfPath }: LectureViewerProps) => {
           </SplideSlide>
         ))}
       </Splide>
+      <a href={pdfPath} target="_blank" rel="noopener noreferrer">
+        <button className="glow-on-hover">Открыть PDF лекции</button>
+      </a>
 
-      <div className="pdf-container">
+      {/* <div className="pdf-container">
         <embed
           src={pdfPath}
           type="application/pdf"
           width="100%"
           height="1000px"
         />
-      </div>
+      </div> */}
     </StyleLectureViewer>
   );
 };

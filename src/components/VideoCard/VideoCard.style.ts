@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const StyleVideoCard = styled.div`
   display: flex;
-  width: 90%;
-  border-radius: 20px;
+  flex-direction: column;
+  width: calc(4.9vw + 265px);
+  border-radius: 10px;
   overflow: hidden;
+
   img {
     border-radius: 35px;
     object-fit: cover;
     background-repeat: no-repeat;
-    width: 30%;
+    width: 100%;
   }
   .textContainer {
     display: flex;
@@ -20,10 +22,12 @@ export const StyleVideoCard = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    line-height: 20px;
 
     h3 {
-      font: bold 20px "Inter";
+      font-weight: bold;
+      font-size: calc(0.7vw + 13.876px);
+      //
+      line-height: 140%;
       a {
         text-decoration: none;
         color: #222222;
@@ -33,5 +37,9 @@ export const StyleVideoCard = styled.div`
       font: medium 16px "Inter";
       color: #666666;
     }
+  }
+
+  @media (320px <= width <= 850px) {
+    width: 320px;
   }
 `;
