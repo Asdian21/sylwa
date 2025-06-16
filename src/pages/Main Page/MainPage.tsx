@@ -80,10 +80,10 @@ export const MainPage = () => {
         <SplideSlide>
           <section className="metodichka-wind" ref={section5Ref}>
             <CenterDiv
-              heading="МЕТОДИЧЕСКОЕ ПОСОБИЕ"
+              heading="ГАЛЕРЕЯ"
               desc="Go from design to site with Framer, the web builder for creative pros."
               button="ЧИТАТЬ"
-              path="metodichka-page"
+              path="gallery-page"
             />
           </section>
         </SplideSlide>

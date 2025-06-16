@@ -54,8 +54,12 @@ export const HeaderForPages = () => {
             </a>
           </li>
           <li>
-            <a href="" className="menu" onClick={() => navigate("/")}>
-              МЕТОДИЧЕСКОЕ ПОСОБИЕ
+            <a
+              href=""
+              className="menu"
+              onClick={() => navigate("/gallery-page")}
+            >
+              ГАЛЕРЕЯ
             </a>
           </li>
         </div>

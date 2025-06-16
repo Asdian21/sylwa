@@ -32,7 +32,7 @@ export const NotMobileUl = ({ goToSlide }: Props) => {
       </li>
       <li>
         <a href="" className="menu" onClick={() => goToSlide(3)}>
-          МЕТОДИЧЕСКОЕ ПОСОБИЕ
+          ГАЛЕРЕЯ
         </a>
       </li>
     </StyleNotMobileUl>
