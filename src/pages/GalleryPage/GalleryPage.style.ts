@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const StyleGalleryPage = styled.div``;
+export const StyleGalleryPage = styled.div`
+  height: 100%;
+`;

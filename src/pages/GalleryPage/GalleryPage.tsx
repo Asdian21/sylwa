@@ -1,15 +1,14 @@
-import { Card3D } from "../../components/Card3D/Card3D";
+// import Card3D from "../../components/Card3D/Card3D";
 import { HeaderForPages } from "../../components/Header/HeaderForPages/HeaderForPages";
+import { CatalogCarousel } from "../../components/CatalogCarousel/CatalogCarousel";
 import { StyleGalleryPage } from "./GalleryPage.style";
+// import { MDBCarousel } from "mdb-react-ui-kit";
 
 export const GalleryPage = () => {
   return (
     <StyleGalleryPage>
       <HeaderForPages />
-      <h1>Каталоги</h1>
-      <div className="container">
-        <Card3D />
-      </div>
+      <CatalogCarousel />
     </StyleGalleryPage>
   );
 };
