@@ -18,8 +18,13 @@ export const HeaderForPages = () => {
             </a>
           </div>
           <div>
-            <span style={{ color: "white", textTransform: "uppercase" }}>
-              Амурова Н. Ю.
+            <span>
+              <a
+                href="/about"
+                style={{ color: "white", textTransform: "uppercase" }}
+              >
+                Амурова Н. Ю.
+              </a>
             </span>
           </div>
           <li>

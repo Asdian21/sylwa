@@ -1,4 +1,4 @@
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import BasicMenu from "../BurgerMenu/BurgerMenu";
 import { StyleHeader } from "./Header.style";
 import { useState, useEffect } from "react";
 import { NotMobileUl } from "./NotMobileUl/NotMobileUl";
@@ -38,12 +38,17 @@ export const Header = ({ goToSlide }: Props) => {
             </a>
           </div>
           <div>
-            <span style={{ color: "white", textTransform: "uppercase" }}>
-              Амурова Н. Ю.
+            <span>
+              <a
+                href="/about"
+                style={{ color: "white", textTransform: "uppercase" }}
+              >
+                Амурова Н. Ю.
+              </a>
             </span>
           </div>
           {notMobile && <NotMobileUl goToSlide={goToSlide} />}
-          <div>{isMobile && <BurgerMenu goToSlide={goToSlide} />}</div>
+          <div>{isMobile && <BasicMenu goToSlide={goToSlide} />}</div>
         </div>
       </header>
     </StyleHeader>

@@ -19,11 +19,16 @@ import {
 } from "./pages/Practice Page/PracticeRoutes";
 import { GalleryPage } from "./pages/GalleryPage/GalleryPage";
 import { FirstPage } from "./pages/GalleryPage/FirstPage/FirstPage";
+import { About } from "./pages/About/About";
 
 const routerConfig = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
+  },
+  {
+    path: "about",
+    element: <About />,
   },
   {
     path: "lecture-page",
