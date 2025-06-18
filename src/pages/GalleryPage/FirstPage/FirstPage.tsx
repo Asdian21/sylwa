@@ -11,9 +11,9 @@ import { HeaderForPages } from "../../../components/Header/HeaderForPages/Header
 // Импорт изображений
 const imageModules = import.meta.glob(
   "/src/assets/gallery/*.{jpg,jpeg,png,webp}",
-  { eager: true, as: "url" }
+  { eager: true, query: "?url", import: "default" }
 );
-const images = Object.values(imageModules);
+const images = Object.values(imageModules) as string[];
 
 const IMAGES_PER_PAGE = 12;
 
