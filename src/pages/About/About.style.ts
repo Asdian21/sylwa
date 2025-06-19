@@ -16,18 +16,32 @@ export const StyleAbout = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     .userPhoto .userImg {
       width: calc(1.8vw + 274.737px);
       display: flex;
       margin: 0 auto;
       border-radius: 8px;
-      margin-bottom: 10px;
     }
     .userFIO {
       font-size: calc(0.4vw + 18.947px);
       font-weight: 400;
       line-height: 140%;
       text-align: center;
+    }
+    .userEmail {
+      display: flex;
+      margin-left: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
+    }
+    .userNumber {
+      display: flex;
+      margin-left: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
     }
   }
   .rightSide {
@@ -154,33 +168,12 @@ export const StyleAbout = styled.div`
 
   /* Button styles end */
 
-  .bottomContainer {
+  .userSocials {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
     align-items: center;
-    justify-content: center;
-    .userSocials {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .userEmail {
-      display: flex;
-      margin-left: 20px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 140%;
-    }
-    .userNumber {
-      display: flex;
-      margin-left: 20px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 140%;
-    }
+    gap: 10px;
+    margin-top: 10px;
   }
 
   @media (width <= 1020px) {
@@ -204,6 +197,9 @@ export const StyleAbout = styled.div`
   @media (width <= 426px) {
     .rightSide .sideInfo {
       grid-template-columns: auto;
+    }
+    .userSocials {
+      justify-content: center;
     }
   }
 `;

@@ -16,6 +16,8 @@ export const About = () => {
             />
           </div>
           <div className="userFIO">Амурова Наталья Юрьевна</div>
+          <div className="userEmail">AmurovaNatalya@gmail.com</div>
+          <div className="userNumber">+998 90 992 04 17</div>
         </div>
         <div className="rightSide">
           <div className="aboutUser">
@@ -69,16 +71,12 @@ export const About = () => {
               paragraph2="Амурова Н.Ю. продолжает вносить значительный вклад в развитие образовательных и научных технологий, направленных на подготовку будущих инженеров в области электроснабжения и инфокоммуникационных систем. Её деятельность как педагога и учёного способствовала развитию новой методики проектного обучения, которая помогает студентам развивать ключевые профессиональные навыки и готовит их к решению сложных инженерных задач."
             />
           </div>
+          <div className="userSocials">
+            <button className="glow-on-hover">TELEGRAM</button>
+            <button className="glow-on-hover">INSTAGRAM</button>
+            <button className="glow-on-hover">YOU TUBE</button>
+          </div>
         </div>
-      </div>
-      <div className="bottomContainer">
-        <div className="userSocials">
-          <button className="glow-on-hover">TELEGRAM</button>
-          <button className="glow-on-hover">INSTAGRAM</button>
-          <button className="glow-on-hover">YOU TUBE</button>
-        </div>
-        <div className="userEmail">AmurovaNatalya@gmail.com</div>
-        <div className="userNumber">+998 90 992 04 17</div>
       </div>
     </StyleAbout>
   );
