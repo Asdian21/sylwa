@@ -1,9 +1,26 @@
-import { useNavigate } from "react-router-dom";
 import { StyleHeaderForPages } from "./HeaderForPages.style";
+import { useEffect, useState } from "react";
+import { NotMobileHeader } from "./NotMobileHeader/NotMobileHeader";
+import MenuForPages from "../../MenuForPages/MenuForPages";
 
 export const HeaderForPages = () => {
-  const navigate = useNavigate();
-  navigate;
+  // Состояние для отслеживания ширины экрана
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 840);
+  const [notMobile, setNotMobile] = useState<boolean>(window.innerWidth > 840);
+
+  // Эффект для обновления состояния при изменении размера окна
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 840); // Обновляем состояние
+      setNotMobile(window.innerWidth > 840);
+    };
+
+    // Добавляем слушателя на изменение размера окна
+    window.addEventListener("resize", handleResize);
+
+    // Убираем слушателя при размонтировании компонента
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <StyleHeaderForPages>
@@ -27,46 +44,8 @@ export const HeaderForPages = () => {
               </a>
             </span>
           </div>
-          <li>
-            <a
-              href=""
-              className="menu"
-              onClick={() => navigate("/lecture-page")}
-            >
-              ЛЕКЦИИ
-            </a>
-          </li>
-
-          <li>
-            <a href="" className="menu" onClick={() => navigate("/video-page")}>
-              ВИДЕОУРОКИ
-            </a>
-          </li>
-
-          <li>
-            <a
-              href=""
-              className="menu"
-              onClick={() => navigate("/practice-page")}
-            >
-              ПРАКТИКА
-            </a>
-          </li>
-
-          <li>
-            <a href="" className="menu" onClick={() => navigate("/test-page")}>
-              ТЕСТЫ
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              className="menu"
-              onClick={() => navigate("/gallery-page")}
-            >
-              ГАЛЕРЕЯ
-            </a>
-          </li>
+          {notMobile && <NotMobileHeader />}
+          <div>{isMobile && <MenuForPages />}</div>
         </div>
       </header>
     </StyleHeaderForPages>

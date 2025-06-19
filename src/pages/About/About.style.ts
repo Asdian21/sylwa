@@ -1,50 +1,33 @@
 import styled from "styled-components";
 
 export const StyleAbout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 30px;
-  padding: 10px;
-  background-color: rgba(218, 218, 218, 0.25);
-  color: #222;
+  .topContainer {
+    display: flex;
+
+    align-items: flex-start;
+    column-gap: 30px;
+    padding: 10px;
+    background-color: rgba(218, 218, 218, 0.25);
+    color: #222;
+  }
 
   .leftSide {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
     .userPhoto .userImg {
-      width: calc(23.5vw + 209.63px);
+      width: calc(1.8vw + 274.737px);
       display: flex;
       margin: 0 auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
     .userFIO {
-      font-size: 32px;
+      font-size: calc(0.4vw + 18.947px);
       font-weight: 400;
       line-height: 140%;
       text-align: center;
-    }
-    .userJob {
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 140%;
-      text-align: center;
-    }
-    .userSocials {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .userEmail {
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 140%;
-    }
-    .userNumber {
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 140%;
     }
   }
   .rightSide {
@@ -61,23 +44,17 @@ export const StyleAbout = styled.div`
 
       .text {
         margin: 50px 20px;
-        font-size: 16px;
+        font-size: calc(0.2vw + 15.259px);
         font-weight: 400;
         line-height: 140%;
       }
     }
-    .firstRow {
-      display: flex;
-      flex-wrap: wrap;
+    .sideInfo {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+      justify-content: space-around;
       gap: 10px;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
-    .secondRow {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
     }
   }
 
@@ -85,7 +62,7 @@ export const StyleAbout = styled.div`
 
   .glow-on-hover {
     width: 60%;
-    min-width: 250px;
+    min-width: 200px;
     padding: 0.75rem;
     border-radius: 8px;
     background-color: #fff;
@@ -99,7 +76,7 @@ export const StyleAbout = styled.div`
 
   .glow-on-hover {
     width: 70%;
-    max-width: 220px;
+    max-width: 200px;
     height: 50px;
     border: none;
     outline: none;
@@ -177,7 +154,56 @@ export const StyleAbout = styled.div`
 
   /* Button styles end */
 
+  .bottomContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    .userSocials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .userEmail {
+      display: flex;
+      margin-left: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
+    }
+    .userNumber {
+      display: flex;
+      margin-left: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 140%;
+    }
+  }
+
+  @media (width <= 1020px) {
+    .rightSide .sideInfo {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto;
+    }
+  }
+
   @media (width <= 850px) {
-    grid-template-columns: 1fr;
+    .topContainer {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .userFIO {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media (width <= 426px) {
+    .rightSide .sideInfo {
+      grid-template-columns: auto;
+    }
   }
 `;

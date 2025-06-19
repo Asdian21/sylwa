@@ -1,4 +1,4 @@
-import BasicMenu from "../BurgerMenu/BurgerMenu";
+import BasicMenu from "../BasicMenu/BasicMenu";
 import { StyleHeader } from "./Header.style";
 import { useState, useEffect } from "react";
 import { NotMobileUl } from "./NotMobileUl/NotMobileUl";

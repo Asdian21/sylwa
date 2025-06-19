@@ -4,7 +4,7 @@ export const SideInfoBox = styled.div`
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   padding: 20px 30px;
   border-radius: 10px;
   cursor: pointer;
@@ -13,11 +13,11 @@ export const SideInfoBox = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: calc(6.5vw + 270.37px);
+  width: 100%;
   height: 150px;
 
   .text {
-    font-size: 20px;
+    font-size: calc(0.2vw + 15.259px);
     font-weight: 600;
     color: #000;
     text-align: center;
@@ -36,7 +36,7 @@ export const ModalOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 5;
 `;
 
 export const ModalContent = styled.div`
@@ -46,7 +46,7 @@ export const ModalContent = styled.div`
   padding: 30px;
   border-radius: 12px;
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: 90vh;
 
   h2 {
     margin-top: 0;
@@ -58,5 +58,6 @@ export const ModalContent = styled.div`
     font-size: 18px;
     line-height: 1.6;
     margin-top: 10px;
+    text-indent: 25px;
   }
 `;

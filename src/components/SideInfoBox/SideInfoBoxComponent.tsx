@@ -8,9 +8,10 @@ import { useState } from "react";
 interface Props {
   h2: string;
   paragraph: string;
+  paragraph2: string;
 }
 
-export const SideInfoBoxComponent = ({ h2, paragraph }: Props) => {
+export const SideInfoBoxComponent = ({ h2, paragraph, paragraph2 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggleModal = () => setIsOpen((prev) => !prev);
   return (
@@ -24,6 +25,7 @@ export const SideInfoBoxComponent = ({ h2, paragraph }: Props) => {
           <ModalContent onClick={(e) => e.stopPropagation()}>
             <h2>{h2}</h2>
             <p>{paragraph}</p>
+            <p>{paragraph2}</p>
           </ModalContent>
         </ModalOverlay>
       )}

@@ -3,6 +3,7 @@ import { generalData } from "../../baza/baza";
 import ChartCard from "../../components/ChatrCard";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { tests } from "../../baza/test";
+// import { HeaderForPages } from "../../components/Header/HeaderForPages/HeaderForPages";
 
 export const TestPage = () => {
   const [testResults, setTestResults] = useState<Record<string, number>>({});
@@ -49,32 +50,35 @@ export const TestPage = () => {
   const memoizedDataBase = useMemo(() => DataBase, [DataBase]);
 
   return (
-    <div className="p-5 flex flex-row gap-5">
-      {/* Основная область тестирования */}
-      <div className="w-[100%] md:w-[70%] flex flex-col gap-5">
-        <div className="flex flex-col gap-2 bg-white p-5 rounded">
-          <h1 className="text-lg font-semibold">Данные студента</h1>
-          <div className="flex items-center gap-2">
-            <h3 className="text-lg font-semibold">
-              Общий результат: {allBall} /{" "}
-              {(Object.keys(tests).length * 1).toFixed(1)}
-            </h3>
+    <>
+      {/* <HeaderForPages /> */}
+      <div className="p-5 flex flex-row gap-5">
+        {/* Основная область тестирования */}
+        <div className="w-[100%] md:w-[70%] flex flex-col gap-5">
+          <div className="flex flex-col gap-2 bg-white p-5 rounded">
+            <h1 className="text-lg font-semibold">Данные студента</h1>
+            <div className="flex items-center gap-2">
+              <h3 className="text-lg font-semibold">
+                Общий результат: {allBall} /{" "}
+                {(Object.keys(tests).length * 1).toFixed(1)}
+              </h3>
+            </div>
           </div>
+
+          {/* Таблица с тестами */}
+          <Tables
+            generalData={generalData}
+            testResults={testResults}
+            setTestResults={setTestResults}
+            tests={tests}
+          />
         </div>
 
-        {/* Таблица с тестами */}
-        <Tables
-          generalData={generalData}
-          testResults={testResults}
-          setTestResults={setTestResults}
-          tests={tests}
-        />
+        {/* График с результатами */}
+        <div className="w-[100%] md:w-[30%]">
+          <ChartCard data={memoizedDataBase} generalData={generalData} />
+        </div>
       </div>
-
-      {/* График с результатами */}
-      <div className="w-[100%] md:w-[30%]">
-        <ChartCard data={memoizedDataBase} generalData={generalData} />
-      </div>
-    </div>
+    </>
   );
 };
