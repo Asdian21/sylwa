@@ -59,7 +59,7 @@ export const StyleLectureCard = styled.div`
     img {
       width: 80%;
       margin: 0 auto;
-      height: 200px;
+      height: calc(27.2vw + 91.304px);
     }
   }
 `;

@@ -145,15 +145,8 @@ export function Lectures() {
   return (
     <StyleLectures>
       <HeaderForPages />
-
       <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            marginTop: "30px",
-          }}
-        >
+        <div className="searchDiv">
           <h1>Поиск по лекциям</h1>
           <SearchBar onSearch={setSearchQuery} />
         </div>
