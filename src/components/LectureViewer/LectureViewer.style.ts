@@ -29,7 +29,6 @@ export const StyleLectureViewer = styled.div`
     object-fit: contain;
   }
 
-  /* Контейнер для стрелок */
   .splide__arrows {
     position: absolute;
     top: 50%;
@@ -37,43 +36,17 @@ export const StyleLectureViewer = styled.div`
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    pointer-events: none; /* Чтобы стрелки не мешали клику по слайду */
-  }
-
-  .splide__arrow {
-    position: absolute;
-    background-color: rgba(165, 195, 109, 0.62);
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: all;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .splide__arrow:hover {
-    background-color: rgba(198, 247, 50, 0.8);
+    pointer-events: none;
   }
 
   .splide__arrow--prev {
     left: -60px;
-    background-image: url("./left-arrow.png");
     background-size: contain;
   }
 
   .splide__arrow--next {
     right: -60px;
-    background-image: url("./right-arrow.png");
     background-size: contain;
-  }
-
-  .splide__arrow--prev svg {
-    display: none;
-  }
-  .splide__arrow--next svg {
-    display: none;
   }
 
   .pdf-container {
