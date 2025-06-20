@@ -50,12 +50,12 @@ export const ModalContent = styled.div`
 
   h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: calc(0.4vw + 18.857px);
     text-align: center;
   }
 
   p {
-    font-size: 18px;
+    font-size: calc(0.4vw + 12.857px);
     line-height: 1.6;
     margin-top: 10px;
     text-indent: 25px;

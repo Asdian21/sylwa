@@ -192,14 +192,14 @@ export const StyleAbout = styled.div`
         margin-bottom: 10px;
       }
     }
+    .userSocials {
+      justify-content: center;
+    }
   }
 
   @media (width <= 426px) {
     .rightSide .sideInfo {
       grid-template-columns: auto;
-    }
-    .userSocials {
-      justify-content: center;
     }
   }
 `;

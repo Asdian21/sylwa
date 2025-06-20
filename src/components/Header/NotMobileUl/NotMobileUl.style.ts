@@ -4,6 +4,8 @@ export const StyleNotMobileUl = styled.ul`
   display: flex;
   list-style: none;
   gap: 68px;
+  align-items: center;
+  margin: 0;
 
   li {
     transition: filter 0.3s ease-in-out;

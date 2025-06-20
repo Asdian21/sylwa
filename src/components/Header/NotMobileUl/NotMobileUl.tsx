@@ -5,33 +5,37 @@ interface Props {
 }
 
 export const NotMobileUl = ({ goToSlide }: Props) => {
+  const handleClick = (index: number) => {
+    goToSlide(index);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  };
   return (
     <StyleNotMobileUl>
       <li>
-        <a href="" className="menu" onClick={() => goToSlide(0)}>
+        <a href="" className="menu" onClick={() => handleClick(0)}>
           ЛЕКЦИИ
         </a>
       </li>
 
       <li>
-        <a href="" className="menu" onClick={() => goToSlide(2)}>
+        <a href="" className="menu" onClick={() => handleClick(2)}>
           ВИДЕОУРОКИ
         </a>
       </li>
 
       <li>
-        <a href="" className="menu" onClick={() => goToSlide(1)}>
+        <a href="" className="menu" onClick={() => handleClick(1)}>
           ПРАКТИКА
         </a>
       </li>
 
       <li>
-        <a href="" className="menu" onClick={() => goToSlide(4)}>
+        <a href="" className="menu" onClick={() => handleClick(4)}>
           ТЕСТЫ
         </a>
       </li>
       <li>
-        <a href="" className="menu" onClick={() => goToSlide(3)}>
+        <a href="" className="menu" onClick={() => handleClick(3)}>
           ГАЛЕРЕЯ
         </a>
       </li>

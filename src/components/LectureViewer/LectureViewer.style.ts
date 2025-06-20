@@ -7,16 +7,20 @@ export const StyleLectureViewer = styled.div`
   background-color: #bfbfbfba;
   height: 100vh;
 
+  .slider {
+    margin: auto;
+  }
+
   .splide {
-    width: 60vw;
-    max-width: 1280px;
+    width: 65vw;
+    max-width: 1800px;
     aspect-ratio: 16 / 9;
     background: #f0f0f0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: visible;
     position: relative; /* Чтобы стрелки позиционировались относительно слайдера */
-    margin-top: 30px;
+    margin: auto;
   }
 
   .splide__slide img {
@@ -98,7 +102,7 @@ export const StyleLectureViewer = styled.div`
     font-weight: 600;
     font-family: "Inter", sans-serif;
     position: absolute;
-    top: 30px;
+    top: -10px;
   }
 
   .glow-on-hover {
@@ -180,4 +184,70 @@ export const StyleLectureViewer = styled.div`
   }
 
   /* Button styles end */
+
+  /* Exit button styles start */
+
+  /* .exit-fullscreen-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 10000;
+    transition: background 0.3s ease;
+  }
+
+  .exit-fullscreen-btn:hover {
+    background: rgba(255, 0, 0, 0.8);
+  } */
+
+  /* Exit button styles end */
+`;
+
+export const FullscreenSliderWrapper = styled.div`
+  &.fullscreen-slider {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    background-color: black;
+
+    .splide {
+      width: 100%;
+      margin: auto;
+    }
+
+    .splide__slide img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+
+    .exit-fullscreen-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 6;
+      transition: background 0.3s ease;
+    }
+
+    .exit-fullscreen-btn:hover {
+      background: rgba(255, 0, 0, 0.8);
+    }
+
+    .none {
+      display: none;
+    }
+  }
 `;

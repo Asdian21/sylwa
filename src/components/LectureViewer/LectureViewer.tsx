@@ -1,9 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import SplideCore from "@splidejs/splide";
 import { useLoadSlides } from "../../hooks/useLoadSlides";
-import { StyleLectureViewer } from "./LectureViewer.style";
+import {
+  StyleLectureViewer,
+  FullscreenSliderWrapper,
+} from "./LectureViewer.style";
 import { HeaderForPages } from "../Header/HeaderForPages/HeaderForPages";
 import { useLocation } from "react-router-dom";
 
@@ -52,42 +55,87 @@ export const LectureViewer = ({ slidesPath, pdfPath }: LectureViewerProps) => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  const sliderContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const button = document.querySelector("exit-fullscreen-btn");
+
+  const enterFullscreen = () => {
+    const container = sliderContainerRef.current;
+    if (container) {
+      container.classList.add("fullscreen-slider");
+      setIsFullscreen(true);
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if ((container as any).webkitRequestFullscreen) {
+        (container as any).webkitRequestFullscreen();
+      }
+    }
+  };
+
+  const exitFullscreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen?.();
+      setIsFullscreen(false);
+    }
+  };
+
+  if (!isFullscreen) {
+    button?.classList.add("none");
+  }
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const isFs = Boolean(document.fullscreenElement);
+      setIsFullscreen(isFs);
+      if (!isFs) {
+        sliderContainerRef.current?.classList.remove("fullscreen-slider");
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
+
   return (
     <StyleLectureViewer>
       <HeaderForPages />
 
-      <Splide
-        options={{
-          rewind: true,
-          gap: "1rem",
-          type: "loop",
-          perPage: 1,
-          autoplay: false,
-          pagination: false,
-          arrows: true,
-        }}
-        onMounted={(splide: any) => {
-          splideRef.current = splide;
-        }}
+      <FullscreenSliderWrapper
+        ref={sliderContainerRef}
+        onClick={enterFullscreen}
+        className="slider"
       >
-        {slides.map((src, index) => (
-          <SplideSlide key={index}>
-            <img src={src} alt={`Слайд ${index + 1}`} />
-          </SplideSlide>
-        ))}
-      </Splide>
+        <Splide
+          options={{
+            rewind: true,
+            gap: "1rem",
+            type: "loop",
+            perPage: 1,
+            autoplay: false,
+            pagination: false,
+            arrows: true,
+          }}
+          onMounted={(splide: any) => {
+            splideRef.current = splide;
+          }}
+        >
+          {slides.map((src, index) => (
+            <SplideSlide key={index}>
+              <img src={src} alt={`Слайд ${index + 1}`} />
+            </SplideSlide>
+          ))}
+        </Splide>
+        {isFullscreen && (
+          <button className="exit-fullscreen-btn" onClick={exitFullscreen}>
+            ✕ Выйти
+          </button>
+        )}
+      </FullscreenSliderWrapper>
+
       <a href={pdfPath} target="_blank" rel="noopener noreferrer">
         <button className="glow-on-hover">Открыть PDF лекции</button>
       </a>
-
-      {/* <div className="pdf-container">
-        <embed
-          src={pdfPath}
-          type="application/pdf"
-          width="100%"
-          height="1000px"
-        />
-      </div> */}
     </StyleLectureViewer>
   );
 };

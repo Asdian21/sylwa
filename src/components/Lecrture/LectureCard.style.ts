@@ -10,7 +10,7 @@ export const StyleLectureCard = styled.div`
     border-radius: 35px;
     object-fit: cover;
     background-repeat: no-repeat;
-    min-width: 300px;
+    min-width: 280px;
   }
   .textContainer {
     display: flex;
@@ -48,6 +48,18 @@ export const StyleLectureCard = styled.div`
       border-radius: 8px;
       color: #ffffff;
       font: medium 14px "Inter";
+    }
+  }
+
+  @media (width < 768px) {
+    display: grid;
+    grid-template-columns: auto;
+    height: 500px;
+
+    img {
+      width: 80%;
+      margin: 0 auto;
+      height: 200px;
     }
   }
 `;
