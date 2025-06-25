@@ -19,6 +19,10 @@ export const StyleFirstPage = styled.div`
       transform: scale(1.02);
     }
   }
+
+  @media (width < 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ModalOverlay = styled.div`
@@ -29,6 +33,25 @@ export const ModalOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .close-modal-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    font-size: 24px;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    z-index: 1001;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
 `;
 
 export const ModalImage = styled.img`

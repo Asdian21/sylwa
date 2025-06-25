@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const StyleCatalogCarousel = styled.div`
   display: flex;
   flex-direction: column;
+
+  .d-none {
+    display: block !important;
+  }
+
   /* Button styles start */
 
   .glow-on-hover {

@@ -95,6 +95,17 @@ export const FirstPage = () => {
       {/* Модалка */}
       {selectedIndex !== null && (
         <ModalOverlay onClick={closeModal}>
+          {/* Кнопка закрытия */}
+          <button
+            className="close-modal-btn"
+            onClick={(e) => {
+              e.stopPropagation(); // предотвращает закрытие при клике по оверлею
+              closeModal();
+            }}
+          >
+            ✕
+          </button>
+
           <ModalNavButton
             onClick={(e) => {
               e.stopPropagation();

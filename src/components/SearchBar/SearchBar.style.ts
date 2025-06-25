@@ -40,6 +40,9 @@ export const StyleSearchBar = styled.div`
     color: rgba(225, 245, 79, 0.9);
     background-color: transparent;
     pointer-events: painted;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .btn-search:focus ~ .input-search {
     width: 300px;

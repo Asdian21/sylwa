@@ -14,6 +14,8 @@ interface Props {
 export const SideInfoBoxComponent = ({ h2, paragraph, paragraph2 }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggleModal = () => setIsOpen((prev) => !prev);
+  const handleClose = () => setIsOpen(false);
+
   return (
     <>
       <SideInfoBox onClick={handleToggleModal}>
@@ -21,8 +23,15 @@ export const SideInfoBoxComponent = ({ h2, paragraph, paragraph2 }: Props) => {
       </SideInfoBox>
 
       {isOpen && (
-        <ModalOverlay onClick={handleToggleModal}>
+        <ModalOverlay onClick={handleClose}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={handleClose}
+              aria-label="Закрыть"
+              className="closeButton"
+            >
+              ✕
+            </button>
             <h2>{h2}</h2>
             <p>{paragraph}</p>
             <p>{paragraph2}</p>

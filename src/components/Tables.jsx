@@ -56,7 +56,11 @@ const Tables = ({
 
   // ✅ Функция отображения результатов тестирования
   const displayResults = () => {
-    if (!testResults || typeof testResults !== "object" || Object.keys(testResults).length === 0) {
+    if (
+      !testResults ||
+      typeof testResults !== "object" ||
+      Object.keys(testResults).length === 0
+    ) {
       return <p>Нет результатов теста</p>; // ✅ Если результатов нет, выводим сообщение
     }
 
@@ -124,30 +128,39 @@ const Tables = ({
   ];
 
   return (
-    <div>
-      {/* ✅ Таблица с тестами */}
-      <Table
-        columns={columns}
-        dataSource={generalData.map((item, index) => ({
-          ...item,
-          index: index + 1,
-        }))}
-        rowKey="id"
-        pagination={false}
-        rowClassName={(record) => record.color || ""} // ✅ Добавляем цвет строке
-      />
+    <div style={{ overflowX: "auto" }}>
+      <div style={{ minWidth: "700px" }}>
+        <Table
+          columns={columns}
+          dataSource={generalData.map((item, index) => ({
+            ...item,
+            index: index + 1,
+          }))}
+          rowKey="id"
+          pagination={false}
+          rowClassName={(record) => record.color || ""}
+        />
+      </div>
 
       {/* ✅ Модальное окно с тестом */}
-      <Modal title="Тест" open={isModalOpen} onOk={handleFinishTest} onCancel={() => setIsModalOpen(false)}>
+      <Modal
+        title="Тест"
+        open={isModalOpen}
+        onOk={handleFinishTest}
+        onCancel={() => setIsModalOpen(false)}
+      >
         {currentTest && (
           <div>
             <p>
-              <strong>{currentTest.question}</strong> {/* ✅ Вывод вопроса */}
+              <strong>{currentTest.question}</strong>
             </p>
-            <Radio.Group onChange={(e) => handleAnswerSelect(e.target.value)} value={selectedAnswer}>
+            <Radio.Group
+              onChange={(e) => handleAnswerSelect(e.target.value)}
+              value={selectedAnswer}
+            >
               {currentTest.options.map((option, index) => (
                 <Radio key={index} value={option}>
-                  {option} {/* ✅ Вывод вариантов ответов */}
+                  {option}
                 </Radio>
               ))}
             </Radio.Group>
@@ -158,7 +171,7 @@ const Tables = ({
       {/* ✅ Блок с результатами тестирования */}
       <div className="bg-white p-4 rounded mt-5">
         <h3>Результаты тестирования:</h3>
-        {displayResults()} {/* ✅ Вывод результатов тестов */}
+        {displayResults()}
       </div>
     </div>
   );

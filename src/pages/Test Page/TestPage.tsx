@@ -3,7 +3,9 @@ import { generalData } from "../../baza/baza";
 import ChartCard from "../../components/ChatrCard";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { tests } from "../../baza/test";
-// import { HeaderForPages } from "../../components/Header/HeaderForPages/HeaderForPages";
+import { StyleHeaderForPages, StyleTestPage } from "./TestPage.style";
+import { NotMobileHeader } from "../../components/Header/HeaderForPages/NotMobileHeader/NotMobileHeader";
+import MenuForPages from "../../components/MenuForPages/MenuForPages";
 
 export const TestPage = () => {
   const [testResults, setTestResults] = useState<Record<string, number>>({});
@@ -49,16 +51,57 @@ export const TestPage = () => {
 
   const memoizedDataBase = useMemo(() => DataBase, [DataBase]);
 
+  // Состояние для отслеживания ширины экрана
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 840);
+  const [notMobile, setNotMobile] = useState<boolean>(window.innerWidth > 840);
+
+  // Эффект для обновления состояния при изменении размера окна
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 840); // Обновляем состояние
+      setNotMobile(window.innerWidth > 840);
+    };
+
+    // Добавляем слушателя на изменение размера окна
+    window.addEventListener("resize", handleResize);
+
+    // Убираем слушателя при размонтировании компонента
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      {/* <HeaderForPages /> */}
-      <div className="p-5 flex flex-row gap-5">
-        {/* Основная область тестирования */}
-        <div className="w-[100%] md:w-[70%] flex flex-col gap-5">
-          <div className="flex flex-col gap-2 bg-white p-5 rounded">
-            <h1 className="text-lg font-semibold">Данные студента</h1>
-            <div className="flex items-center gap-2">
-              <h3 className="text-lg font-semibold">
+      <StyleHeaderForPages>
+        <header style={{ width: "100%" }}>
+          <div className="header">
+            <div className="logo">
+              <a href="/">
+                <img
+                  src="./eko_icon.png"
+                  style={{ width: "50px", height: "50px", marginLeft: "20px" }}
+                />
+              </a>
+            </div>
+            <div>
+              <span>
+                <a
+                  href="/about"
+                  style={{ color: "white", textTransform: "uppercase" }}
+                >
+                  Амурова Н. Ю.
+                </a>
+              </span>
+            </div>
+            {notMobile && <NotMobileHeader />}
+            <div>{isMobile && <MenuForPages />}</div>
+          </div>
+        </header>
+      </StyleHeaderForPages>
+      <StyleTestPage>
+        <div className="questions">
+          <div className="questionsInner">
+            <div className="overallResult">
+              <h3>
                 Общий результат: {allBall} /{" "}
                 {(Object.keys(tests).length * 1).toFixed(1)}
               </h3>
@@ -75,10 +118,10 @@ export const TestPage = () => {
         </div>
 
         {/* График с результатами */}
-        <div className="w-[100%] md:w-[30%]">
+        <div className="resultsGraph">
           <ChartCard data={memoizedDataBase} generalData={generalData} />
         </div>
-      </div>
+      </StyleTestPage>
     </>
   );
 };

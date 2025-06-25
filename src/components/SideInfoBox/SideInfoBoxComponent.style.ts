@@ -46,7 +46,21 @@ export const ModalContent = styled.div`
   padding: 30px;
   border-radius: 12px;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 100vh;
+
+  .closeButton {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 45px;
+    background-color: transparent;
+  }
 
   h2 {
     margin-top: 0;

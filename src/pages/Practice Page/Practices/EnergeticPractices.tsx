@@ -144,13 +144,7 @@ export function EnergeticPractices() {
       <HeaderForPages />
 
       <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            marginTop: "30px",
-          }}
-        >
+        <div className="searchDiv">
           <h1>Поиск по практикам</h1>
           <SearchBar onSearch={setSearchQuery} />
         </div>

@@ -14,6 +14,10 @@ export const StyleLectures = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 30px;
+    h1 {
+      display: flex;
+      align-items: center;
+    }
   }
 
   @media (width < 768px) {

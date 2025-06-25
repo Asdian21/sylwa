@@ -97,15 +97,17 @@ export const LectureViewer = ({ slidesPath, pdfPath }: LectureViewerProps) => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
   }, []);
 
+  useEffect(() => {
+    if (splideRef.current && slides.length > 0) {
+      splideRef.current.refresh();
+    }
+  }, [slides]);
+
   return (
     <StyleLectureViewer>
       <HeaderForPages />
 
-      <FullscreenSliderWrapper
-        ref={sliderContainerRef}
-        onClick={enterFullscreen}
-        className="slider"
-      >
+      <FullscreenSliderWrapper ref={sliderContainerRef} className="slider">
         <Splide
           options={{
             rewind: true,
@@ -121,7 +123,7 @@ export const LectureViewer = ({ slidesPath, pdfPath }: LectureViewerProps) => {
           }}
         >
           {slides.map((src, index) => (
-            <SplideSlide key={index}>
+            <SplideSlide key={index} onClick={enterFullscreen}>
               <img src={src} alt={`Слайд ${index + 1}`} />
             </SplideSlide>
           ))}

@@ -16,6 +16,13 @@ export const StyleVideoPage = styled.div`
     align-items: center;
   }
 
+  .searchDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+
   .glow-on-hover {
     width: 10px;
     min-width: 80px;
@@ -27,6 +34,9 @@ export const StyleVideoPage = styled.div`
     border: none;
     font-weight: 600;
     font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .glow-on-hover {

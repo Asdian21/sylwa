@@ -5,8 +5,24 @@ export const StyleGreenSmartPractices = styled.div`
     display: flex;
     flex-direction: column;
     gap: 50px;
-    margin: 50px 200px;
     justify-content: center;
     align-items: center;
+  }
+
+  .searchDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    h1 {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  @media (width < 768px) {
+    .gridCards {
+      gap: 0;
+    }
   }
 `;

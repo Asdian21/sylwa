@@ -3,45 +3,39 @@ import styled from "styled-components";
 export const StylePracticePage = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 100px;
 
   img {
-    width: 660px;
+    width: calc(32.5vw + 192.632px);
+    height: calc(21.1vw + 86.842px);
     border-radius: 20px;
   }
-  .energetika {
+  .subject {
     display: flex;
-    gap: 40px;
+    justify-content: center;
     align-items: center;
-    margin: 0 80px;
-  }
-  .smart-technology {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 40px;
-    align-items: center;
-    margin: 0 80px;
-  }
-  .life-save {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    margin: 0 80px 100px;
+    flex-wrap: wrap;
+    height: 80vh;
+    gap: calc(2.6vw + 2.105px);
+    margin-top: calc(3.5vw - 0.526px);
+    margin-left: calc(6.1vw - 8.421px);
+    margin-right: calc(6.1vw - 8.421px);
+    margin-bottom: 10px;
   }
 
   .Info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: calc(1.3vw + 1.053px);
+    width: calc(21.9vw + 224.211px);
     h1 {
-      font-size: 48px;
+      font-size: calc(2.8vw + 7.579px);
       font-weight: bold;
       color: #333333;
       font-family: "Inter", sans-serif;
     }
     h2 {
-      width: 400px;
-      font-size: 24;
+      width: 100%;
+      font-size: calc(1.1vw + 8.842px);
       font-weight: medium;
       font-family: "Inter", sans-serif;
       color: #888888;
@@ -142,41 +136,6 @@ export const StylePracticePage = styled.div`
     /* Button styles end */
   }
 
-  .header {
-    display: flex;
-    justify-content: space-around;
-    height: 53px;
-    align-items: center;
-    background-color: rgb(30, 41, 27);
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 90px;
-
-      li {
-        transition: filter 0.3s ease-in-out;
-        :hover {
-          color: #eee;
-          text-shadow: 0 0 10px rgb(43, 255, 0, 0.5),
-            0 0 20px rgb(43, 255, 0, 0.5), 0 0 30px rgb(43, 255, 0, 0.5),
-            0 0 40px rgb(43, 255, 0, 0.8);
-        }
-
-        a {
-          display: flex;
-          margin-top: 5px;
-          text-decoration: none;
-          color: white;
-          background-color: rgb(30, 41, 27);
-          border: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
-  }
-
   /* Pagination styles start */
 
   .custom-progress-slider .splide__pagination__page {
@@ -198,6 +157,10 @@ export const StylePracticePage = styled.div`
 
   .custom-progress-slider .splide__pagination__page.is-active::before {
     animation: progressBar 5s linear forwards;
+  }
+
+  .splide__pagination.splide__pagination--ltr {
+    bottom: 0;
   }
 
   @keyframes progressBar {

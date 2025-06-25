@@ -29,7 +29,7 @@ export const PracticePage = () => {
         className="custom-progress-slider"
       >
         <SplideSlide>
-          <div className="energetika">
+          <div className="subject">
             <img src="./lecture_1.jpg" />
             <div className="Info">
               <h1>ЭЛЕКТРОСНАБЖЕНИЕ</h1>
@@ -47,7 +47,7 @@ export const PracticePage = () => {
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div className="smart-technology">
+          <div className="subject">
             <img src="./lecture_2.jpg" />
             <div className="Info">
               <h1>GREEN / SMART TECHNOLOGY</h1>
@@ -62,12 +62,10 @@ export const PracticePage = () => {
           </div>
         </SplideSlide>
         <SplideSlide>
-          <div className="life-save">
+          <div className="subject">
             <img src="./image_3.jpg" />
             <div className="Info">
-              <h1 style={{ fontSize: "45px" }}>
-                БЕЗОПАСНОСТЬ ЖИЗНЕДЕЯТЕЛЬНОСТИ
-              </h1>
+              <h1>БЕЗОПАСНОСТЬ ЖИЗНЕДЕЯТЕЛЬНОСТИ</h1>
               <h2>
                 Install the plugin and convert your designs to a responsive
                 site.
