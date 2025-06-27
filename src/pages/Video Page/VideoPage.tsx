@@ -1,373 +1,398 @@
+import { useEffect, useState } from "react";
+import { fetchYouTubeVideoData } from "../../utils/youtube";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
-import { useState } from "react";
 import { StyleVideoPage } from "./VideoPage.style";
-import { VideoCardList } from "../../components/VideoCardList/VideoСardList";
 import { HeaderForPages } from "../../components/Header/HeaderForPages/HeaderForPages";
+import { VideoCardList } from "../../components/VideoCardList/VideoСardList";
+import { VideoModal } from "../../components/VideoModal/VideoModal";
+
+// ✅ Правильно: ключ с префиксом VITE_ из .env
+const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 interface VideoCard {
   id: number;
+  href: string;
   image: string;
   lessonName: string;
-  href: string;
 }
 
-const initialLectureCards: VideoCard[] = [
+const initialLectureCards = [
   {
     id: 1,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "https://youtube.com",
+    href: "https://youtu.be/b8VBiClQeRk?si=oa8cAxNeQfqrFDYR",
+    image: "",
+    lessonName: "",
   },
   {
     id: 2,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/b9yCB_qUwIM?si=c8bLysF85rJK_9XI",
+    image: "",
+    lessonName: "",
   },
   {
     id: 3,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/hFDp7KXxNlY?si=bi5poR2lXaYWnPo5",
+    image: "",
+    lessonName: "",
   },
   {
     id: 4,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/Q8MfaP9sXs0?si=41wklplho9Q4wNUr",
+    image: "",
+    lessonName: "",
   },
   {
     id: 5,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/yPgu1CroLjE?si=NRzB1aqey1jucNxR",
+    image: "",
+    lessonName: "",
   },
   {
     id: 6,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/JFuWHb2buNA?si=DVKHPU9yP44f3tNb",
+    image: "",
+    lessonName: "",
   },
   {
     id: 7,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/kFpx4GTDlPE?si=4tLdl_sf3CCyEGpl",
+    image: "",
+    lessonName: "",
   },
   {
     id: 8,
-    image: "./lectureCard.jpg",
-    lessonName: "Пример: перейти на страницу Ютуб",
-    href: "",
+    href: "https://youtu.be/JFuWHb2buNA?si=DVKHPU9yP44f3tNb",
+    image: "",
+    lessonName: "",
   },
   {
     id: 9,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/6EKkVqE8hCo?si=lpUH9uZrX193jjlE",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 10,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/6TLRaU8de38?si=fczc4gRHPh5CBHE6",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 11,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/Mu1Qx7Vr_js?si=qsUiorEzrHJ0VKxg",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 12,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/1XvMHcW7wHg?si=Mqebx4_Xe8fgERle",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 13,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/K8CDmjtVXpk?si=xFwT5mYOdlGRE9Rc",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 14,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/8OW3RaKJMIQ?si=q7uOK4S9C7CGUCHG",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 15,
-    image: "./lectureCard.jpg",
-    lessonName: "Second page",
-    href: "",
+    href: "https://youtu.be/Dppb64mK-OM?si=STY6DdOExEG6M26h",
+    image: "",
+    lessonName: "",
   },
   {
     id: 16,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/XSm5geKhqlU?si=QyeOCT9H3RgCxnHF",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 17,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/IDPnD1EQ4bk?si=Dg2d6GEVxgLuxdVB",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 18,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/uQRVHE8fIbY?si=NuVTd91ARBqUasq2",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 19,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/Vw7kBQME38Q?si=GE9JvuWHnDpX2aEB",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 20,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/4ssVDrp_zEg?si=D_bQTWCGwYItEGDX",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 21,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/bv__ODXTOWI?si=Z9YDpBYfmsxoL4sB",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 22,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/MStHAxXgz7A?si=YJpc5voWvatrMB7-",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 23,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/0lroxNsOwQ4?si=iTMaGIvF_Pk93zSh",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 24,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/XTIYfHRR1T4?si=JpcGw6RTs5dYkWDT",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 25,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/MM2QXWWilkU?si=cjOP8oek9eZvnVdw",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 26,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/UbRP1lCFPgI?si=O9HuYKUpFojOXvGF",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 27,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/1dqrCr63oig?si=GsLNu93tIa2ekjyb",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 28,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/ZSgAeRaj2PQ?si=tRmHu0kbbVZxJgjL",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 29,
-    image: "./lectureCard.jpg",
-    lessonName: "Third page",
-    href: "",
+    href: "https://youtu.be/Af6q-md8aFs?si=qjo8x7HjOBoP1_nb",
+    image: "",
+    lessonName: "",
   },
   {
     id: 30,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/8ocHmZZxn7Y?si=vN8WA8q0Pop-IiQO",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 31,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/ypVempDzAok?si=FuzJrQK0PYygZ5zk",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 32,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/xMf3lnMqNQo?si=79t0MwvFiaYZ55yl",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 33,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/9hdGIyfQLiQ?si=pUUOR26AMU4kjpvM",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 34,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/RaZq_5FxfzY?si=dGIq3vwJT7-cMjLN",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 35,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/vrdXAs566zc?si=x0STGe9UEtNnh8Tv",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 36,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/ndqaDyUwK-M?si=3049hJq9gDYvNnii",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 37,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/v13GPfhFCOk?si=nh8oCVrIz-umZ4Iw",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 38,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/5quHC9cjUl0?si=HvhKxo11sCxtjwq8",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 39,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/wcEG6yKRBcY?si=DKHnF8psuQMqbGD_",
+    image: "",
     lessonName: "",
-    href: "",
   },
   {
     id: 40,
-    image: "./lectureCard.jpg",
+    href: "https://youtu.be/_K4Urc3MUQ0?si=XaOod8xSOZygzgEB",
+    image: "",
     lessonName: "",
-    href: "",
-  },
-  {
-    id: 41,
-    image: "./lectureCard.jpg",
-    lessonName: "Fourth page",
-    href: "",
-  },
-  {
-    id: 42,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 43,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 44,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 45,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 46,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 47,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 48,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 49,
-    image: "./lectureCard.jpg",
-    lessonName: "",
-    href: "",
-  },
-  {
-    id: 50,
-    image: "./lectureCard.jpg",
-    lessonName: "Fifth page",
-    href: "",
   },
 ];
 
+// 🔧 Извлекает videoId из ссылки
+function extractVideoId(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "youtu.be") {
+      return parsed.pathname.substring(1);
+    }
+    return parsed.searchParams.get("v");
+  } catch {
+    return null;
+  }
+}
+
 export function VideoPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [cards, setCards] = useState<VideoCard[]>([]);
 
-  // Фильтрация по названию лекций (lessonName)
-  const filteredCards = initialLectureCards.filter((card) =>
+  useEffect(() => {
+    async function loadData() {
+      const cacheKey = "youtubeVideoCache";
+      const rawCache = localStorage.getItem(cacheKey);
+      const cache: Record<string, { title: string; thumbnail: string }> =
+        rawCache ? JSON.parse(rawCache) : {};
+
+      const updatedCards = await Promise.all(
+        initialLectureCards.map(async (card) => {
+          const videoId = extractVideoId(card.href);
+          if (!videoId) {
+            return {
+              ...card,
+              lessonName: "Неверная ссылка",
+              image: "./default.jpg",
+            };
+          }
+
+          if (cache[videoId]) {
+            // Из localStorage
+            return {
+              ...card,
+              lessonName: cache[videoId].title,
+              image: cache[videoId].thumbnail,
+            };
+          }
+
+          const data = await fetchYouTubeVideoData(card.href, YOUTUBE_API_KEY);
+          const title = data?.title || "Видео без названия";
+          const thumbnail = data?.thumbnail || "./default.jpg";
+
+          // Обновляем кэш
+          cache[videoId] = { title, thumbnail };
+
+          return {
+            ...card,
+            lessonName: title,
+            image: thumbnail,
+          };
+        })
+      );
+
+      localStorage.setItem(cacheKey, JSON.stringify(cache));
+      setCards(updatedCards);
+    }
+
+    loadData();
+  }, []);
+
+  const filteredCards = cards.filter((card) =>
     card.lessonName.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const itemsPerPage = 12; // количество видео на странице
+  const itemsPerPage = 12;
   const [currentPage, setCurrentPage] = useState(1);
-
-  // всего страниц
   const totalPages = Math.ceil(filteredCards.length / itemsPerPage);
-
-  // какие карточки показать на текущей странице
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentCards = filteredCards.slice(
     startIndex,
     startIndex + itemsPerPage
   );
 
+  // const [modalVideoUrl, setModalVideoUrl] = useState<string | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleCardClick = (href: string) => {
+    const index = cards.findIndex((c) => c.href === href);
+    if (index !== -1) setActiveIndex(index);
+  };
+
   return (
     <StyleVideoPage>
       <HeaderForPages />
-      <div>
-        <div className="searchDiv">
-          <h1>Поиск по видео</h1>
-          <SearchBar onSearch={setSearchQuery} />
-        </div>
-        <VideoCardList cards={currentCards} />
-        <div className="videoPagination">
-          <button
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-            className="glow-on-hover"
-          >
-            ← Назад
-          </button>
-
-          <span style={{ margin: "0 10px" }}>
-            Страница {currentPage} из {totalPages}
-          </span>
-
-          <button
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-            }
-            disabled={currentPage === totalPages}
-            className="glow-on-hover"
-          >
-            Вперёд →
-          </button>
-        </div>
+      <div className="searchDiv">
+        <h1>Поиск по видео</h1>
+        <SearchBar onSearch={setSearchQuery} />
       </div>
+
+      <VideoCardList cards={currentCards} onCardClick={handleCardClick} />
+
+      <div className="videoPagination">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="glow-on-hover"
+        >
+          ← Назад
+        </button>
+        <span>
+          Страница {currentPage} из {totalPages}
+        </span>
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="glow-on-hover"
+        >
+          Вперёд →
+        </button>
+      </div>
+      {activeIndex !== null && (
+        <VideoModal
+          videoUrl={cards[activeIndex].href}
+          onClose={() => setActiveIndex(null)}
+          onNext={() =>
+            setActiveIndex((prev) =>
+              prev !== null && prev < cards.length - 1 ? prev + 1 : prev
+            )
+          }
+          onPrev={() =>
+            setActiveIndex((prev) =>
+              prev !== null && prev > 0 ? prev - 1 : prev
+            )
+          }
+        />
+      )}
     </StyleVideoPage>
   );
 }

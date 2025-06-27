@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import {
-  StyleFirstPage,
   ModalOverlay,
   ModalImage,
   PaginationWrapper,
   ModalNavButton,
-} from "./FirstPage.style";
+  StyleGalleryPage,
+} from "./GalleryPage.style";
 import { HeaderForPages } from "../../../components/Header/HeaderForPages/HeaderForPages";
 
 // Импорт изображений
@@ -17,7 +17,7 @@ const images = Object.values(imageModules) as string[];
 
 const IMAGES_PER_PAGE = 12;
 
-export const FirstPage = () => {
+export const GalleryPage = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -60,7 +60,7 @@ export const FirstPage = () => {
   return (
     <>
       <HeaderForPages />
-      <StyleFirstPage>
+      <StyleGalleryPage>
         {paginatedImages.map((src, i) => (
           <img
             key={i}
@@ -69,7 +69,7 @@ export const FirstPage = () => {
             onClick={() => openModal(i)}
           />
         ))}
-      </StyleFirstPage>
+      </StyleGalleryPage>
 
       {/* Пагинация */}
       <PaginationWrapper>

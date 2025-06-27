@@ -168,6 +168,10 @@ export const StyleAbout = styled.div`
 
   /* Button styles end */
 
+  .glow-on-hover a {
+    color: white;
+  }
+
   .userSocials {
     display: flex;
     flex-wrap: wrap;

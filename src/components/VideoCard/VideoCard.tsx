@@ -4,16 +4,15 @@ interface Props {
   image: string;
   lessonName: string;
   href: string;
+  onClick: () => void;
 }
 
-export const VideoCard = ({ image, lessonName, href }: Props) => {
+export const VideoCard = ({ image, lessonName, onClick }: Props) => {
   return (
-    <StyleVideoCard>
-      <img src={image} />
+    <StyleVideoCard onClick={onClick} style={{ cursor: "pointer" }}>
+      <img src={image} alt={lessonName} />
       <div className="textContainer">
-        <h3>
-          <a href={href}>{lessonName}</a>
-        </h3>
+        <h3>{lessonName}</h3>
       </div>
     </StyleVideoCard>
   );

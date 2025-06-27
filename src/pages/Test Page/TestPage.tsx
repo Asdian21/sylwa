@@ -6,6 +6,7 @@ import { tests } from "../../baza/test";
 import { StyleHeaderForPages, StyleTestPage } from "./TestPage.style";
 import { NotMobileHeader } from "../../components/Header/HeaderForPages/NotMobileHeader/NotMobileHeader";
 import MenuForPages from "../../components/MenuForPages/MenuForPages";
+import { useLocation } from "react-router-dom";
 
 export const TestPage = () => {
   const [testResults, setTestResults] = useState<Record<string, number>>({});
@@ -68,6 +69,12 @@ export const TestPage = () => {
     // Убираем слушателя при размонтировании компонента
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Прокрутка в начало
+  }, [pathname]); // Запускается при изменении пути
 
   return (
     <>

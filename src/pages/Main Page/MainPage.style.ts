@@ -30,6 +30,16 @@ export const StyleMainPage = styled.div`
         margin-top: 120px;
         margin-left: 80px;
       }
+      .creator {
+        border: 1px solid white;
+        width: 250px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        margin-left: auto;
+        margin-top: 80px;
+      }
     }
   }
   .lecture-wind {

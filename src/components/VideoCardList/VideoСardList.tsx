@@ -8,9 +8,13 @@ interface VideoCardListProps {
     lessonName: string;
     href: string;
   }[];
+  onCardClick: (url: string) => void;
 }
 
-export const VideoCardList = ({ cards }: VideoCardListProps) => {
+export const VideoCardList = ({
+  cards,
+  onCardClick,
+}: VideoCardListProps & { onCardClick: (href: string) => void }) => {
   return (
     <StyleVideoCardList>
       <div className="gridCards">
@@ -20,6 +24,7 @@ export const VideoCardList = ({ cards }: VideoCardListProps) => {
             image={card.image}
             lessonName={card.lessonName}
             href={card.href}
+            onClick={() => onCardClick(card.href)} // 💡 Важно
           />
         ))}
       </div>

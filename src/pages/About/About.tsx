@@ -16,7 +16,7 @@ export const About = () => {
             />
           </div>
           <div className="userFIO">Амурова Наталья Юрьевна</div>
-          <div className="userEmail">AmurovaNatalya@gmail.com</div>
+          <div className="userEmail">amuryonok@gmail.com</div>
           <div className="userNumber">+998 90 992 04 17</div>
         </div>
         <div className="rightSide">
@@ -72,9 +72,16 @@ export const About = () => {
             />
           </div>
           <div className="userSocials">
-            <button className="glow-on-hover">TELEGRAM</button>
-            <button className="glow-on-hover">INSTAGRAM</button>
-            <button className="glow-on-hover">YOU TUBE</button>
+            <a href="https://t.me/AmurovaNatalya">
+              <button className="glow-on-hover">TELEGRAM</button>
+            </a>
+            <a href="https://t.me/tuit_ecology_materials">
+              <button className="glow-on-hover">TELEGRAM CHANNEL</button>
+            </a>
+
+            <a href="https://youtube.com/@amuryonok?si=AbQwGE9cduIKAwEh">
+              <button className="glow-on-hover">YOU TUBE</button>
+            </a>
           </div>
         </div>
       </div>

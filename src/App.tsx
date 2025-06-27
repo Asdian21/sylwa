@@ -17,9 +17,9 @@ import {
   energeticPracticeRoutes,
   greenSmartPracticeRoutes,
 } from "./pages/Practice Page/PracticeRoutes";
-import { GalleryPage } from "./pages/GalleryPage/GalleryPage";
-import { FirstPage } from "./pages/GalleryPage/FirstPage/FirstPage";
+
 import { About } from "./pages/About/About";
+import { GalleryPage } from "./pages/GalleryPage/FirstPage/GalleryPage";
 
 const routerConfig = createBrowserRouter([
   {
@@ -55,10 +55,6 @@ const routerConfig = createBrowserRouter([
   {
     path: "gallery-page",
     element: <GalleryPage />,
-  },
-  {
-    path: "first-page",
-    element: <FirstPage />,
   },
 ]);
 

@@ -28,6 +28,13 @@ export const MainPage = () => {
       <section className="join-wind">
         <div className="shadow">
           <h1>Welcome to the world of knowledge</h1>
+          {/* <h1>Добро пожаловать в мир знаний</h1> */}
+          <div className="creator">
+            <span>Developed by Yedixanov Said</span>
+            <span>+998 90 901-32-81</span>
+            <span>Designed by Muminov Abdulloh</span>
+            <span>+998 90 008-75-11</span>
+          </div>
         </div>
       </section>
 
